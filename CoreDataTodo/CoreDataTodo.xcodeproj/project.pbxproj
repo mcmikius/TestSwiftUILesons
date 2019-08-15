@@ -15,6 +15,7 @@
 		F3FE36192305227600FA751D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FE36182305227600FA751D /* Preview Assets.xcassets */; };
 		F3FE361C2305227600FA751D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FE361A2305227600FA751D /* LaunchScreen.storyboard */; };
 		F3FE3624230525D900FA751D /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE3623230525D900FA751D /* ToDoItem.swift */; };
+		F3FE362623052D3900FA751D /* ToDoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FE362523052D3900FA751D /* ToDoItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F3FE361B2305227600FA751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3FE361D2305227600FA751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FE3623230525D900FA751D /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		F3FE362523052D3900FA751D /* ToDoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F3FE360C2305227400FA751D /* AppDelegate.swift */,
 				F3FE360E2305227400FA751D /* SceneDelegate.swift */,
 				F3FE36132305227400FA751D /* ContentView.swift */,
+				F3FE362523052D3900FA751D /* ToDoItemView.swift */,
 				F3FE3623230525D900FA751D /* ToDoItem.swift */,
 				F3FE36152305227600FA751D /* Assets.xcassets */,
 				F3FE361A2305227600FA751D /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3FE360D2305227400FA751D /* AppDelegate.swift in Sources */,
+				F3FE362623052D3900FA751D /* ToDoItemView.swift in Sources */,
 				F3FE360F2305227400FA751D /* SceneDelegate.swift in Sources */,
 				F3FE3624230525D900FA751D /* ToDoItem.swift in Sources */,
 				F3FE36142305227400FA751D /* ContentView.swift in Sources */,
