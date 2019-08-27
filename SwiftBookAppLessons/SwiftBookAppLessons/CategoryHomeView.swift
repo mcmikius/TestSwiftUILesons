@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CategoryHomeView: View {
     var categories: [String: [ProductsResponse]] {
         .init(grouping: materialResponse, by: {$0.category.rawValue}
         )
@@ -18,8 +18,13 @@ struct ContentView: View {
         NavigationView {
             List {
                 CellView(user: swiftbook).listRowInsets(EdgeInsets())
+                ForEach(
                 ForEach(self.categories.keys.sorted(), id: \.self) { key in
-                ProductRow(categoryName: key, items: self.categories[key]!)
+                    if key == "Courses" {
+                        CategoryRow(categoryName: key, items: self.categories[key]!)
+                    } else if key == "Webinars" {
+                        WebinarRowView(categoryName: key, items: self.categories[key]!)
+                        }
                 }.listRowInsets(EdgeInsets())
                 NavigationLink(destination: FriendsListView()) {
                     Text("Our teachings")
@@ -31,9 +36,9 @@ struct ContentView: View {
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
 #endif

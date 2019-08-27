@@ -8,24 +8,25 @@
 
 import SwiftUI
 
-struct ProductItemView: View {
+struct CategoryItemView: View {
     
     var object: ProductsResponse
     
     var body: some View {
         VStack{
             Image(object.image)
-            .resizable()
-            .cornerRadius(10)
+                .resizable()
+                .renderingMode(.original)
+                .cornerRadius(10)
                 .frame(width:170, height: 170)
         }.padding(.leading, 15)
     }
 }
 
 #if DEBUG
-struct ProductItemView_Previews: PreviewProvider {
+struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductItemView(object: materialResponse[1])
+        CategoryItemView(object: materialResponse[1])
     }
 }
 #endif

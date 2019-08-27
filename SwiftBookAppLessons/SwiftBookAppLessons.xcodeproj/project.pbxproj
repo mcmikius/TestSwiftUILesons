@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		F328162A230547EA00AE1B3B /* coursesModelData.json in Resources */ = {isa = PBXBuildFile; fileRef = F3281629230547EA00AE1B3B /* coursesModelData.json */; };
 		F328162E2305483A00AE1B3B /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328162D2305483A00AE1B3B /* ProductsResponse.swift */; };
-		F328163023054ABA00AE1B3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328162F23054ABA00AE1B3B /* ContentView.swift */; };
-		F32816322305509000AE1B3B /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32816312305509000AE1B3B /* ProductRow.swift */; };
-		F32816342305594600AE1B3B /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32816332305594600AE1B3B /* ProductItemView.swift */; };
+		F328163023054ABA00AE1B3B /* CategoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328162F23054ABA00AE1B3B /* CategoryHomeView.swift */; };
+		F32816322305509000AE1B3B /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32816312305509000AE1B3B /* CategoryRow.swift */; };
+		F32816342305594600AE1B3B /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32816332305594600AE1B3B /* CategoryItemView.swift */; };
+		F328163623056B1900AE1B3B /* WebinarRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328163523056B1900AE1B3B /* WebinarRowView.swift */; };
+		F328163823056B6700AE1B3B /* WebinarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328163723056B6700AE1B3B /* WebinarItem.swift */; };
 		F3D343AA2305343C0045BAF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D343A92305343C0045BAF3 /* AppDelegate.swift */; };
 		F3D343AC2305343C0045BAF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D343AB2305343C0045BAF3 /* SceneDelegate.swift */; };
 		F3D343AE2305343C0045BAF3 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D343AD2305343C0045BAF3 /* FriendsListView.swift */; };
@@ -28,9 +30,11 @@
 /* Begin PBXFileReference section */
 		F3281629230547EA00AE1B3B /* coursesModelData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coursesModelData.json; sourceTree = "<group>"; };
 		F328162D2305483A00AE1B3B /* ProductsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
-		F328162F23054ABA00AE1B3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F32816312305509000AE1B3B /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
-		F32816332305594600AE1B3B /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
+		F328162F23054ABA00AE1B3B /* CategoryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHomeView.swift; sourceTree = "<group>"; };
+		F32816312305509000AE1B3B /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		F32816332305594600AE1B3B /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		F328163523056B1900AE1B3B /* WebinarRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarRowView.swift; sourceTree = "<group>"; };
+		F328163723056B6700AE1B3B /* WebinarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarItem.swift; sourceTree = "<group>"; };
 		F3D343A62305343C0045BAF3 /* SwiftBookAppLessons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBookAppLessons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D343A92305343C0045BAF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D343AB2305343C0045BAF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +101,11 @@
 			children = (
 				F3D343A92305343C0045BAF3 /* AppDelegate.swift */,
 				F3D343AB2305343C0045BAF3 /* SceneDelegate.swift */,
-				F328162F23054ABA00AE1B3B /* ContentView.swift */,
-				F32816312305509000AE1B3B /* ProductRow.swift */,
-				F32816332305594600AE1B3B /* ProductItemView.swift */,
+				F328162F23054ABA00AE1B3B /* CategoryHomeView.swift */,
+				F32816312305509000AE1B3B /* CategoryRow.swift */,
+				F32816332305594600AE1B3B /* CategoryItemView.swift */,
+				F328163523056B1900AE1B3B /* WebinarRowView.swift */,
+				F328163723056B6700AE1B3B /* WebinarItem.swift */,
 				F3D343AD2305343C0045BAF3 /* FriendsListView.swift */,
 				F3D343BD230535900045BAF3 /* TopView.swift */,
 				F3D343BF23053D5E0045BAF3 /* CellView.swift */,
@@ -194,14 +200,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32816342305594600AE1B3B /* ProductItemView.swift in Sources */,
+				F32816342305594600AE1B3B /* CategoryItemView.swift in Sources */,
 				F3D343C623053EA00045BAF3 /* Data.swift in Sources */,
 				F3D343AA2305343C0045BAF3 /* AppDelegate.swift in Sources */,
-				F32816322305509000AE1B3B /* ProductRow.swift in Sources */,
+				F328163823056B6700AE1B3B /* WebinarItem.swift in Sources */,
+				F32816322305509000AE1B3B /* CategoryRow.swift in Sources */,
 				F3D343C023053D5E0045BAF3 /* CellView.swift in Sources */,
 				F3D343AC2305343C0045BAF3 /* SceneDelegate.swift in Sources */,
+				F328163623056B1900AE1B3B /* WebinarRowView.swift in Sources */,
 				F328162E2305483A00AE1B3B /* ProductsResponse.swift in Sources */,
-				F328163023054ABA00AE1B3B /* ContentView.swift in Sources */,
+				F328163023054ABA00AE1B3B /* CategoryHomeView.swift in Sources */,
 				F3D343BE230535900045BAF3 /* TopView.swift in Sources */,
 				F3D343AE2305343C0045BAF3 /* FriendsListView.swift in Sources */,
 				F3D343C423053E8A0045BAF3 /* UserResponse.swift in Sources */,
