@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		F372D60823159D780094A6C1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372D60723159D780094A6C1 /* CircleImage.swift */; };
 		F372D60A23159E120094A6C1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372D60923159E120094A6C1 /* MapView.swift */; };
+		F372D60C2315A0580094A6C1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372D60B2315A0580094A6C1 /* Landmark.swift */; };
+		F372D60E2315A09B0094A6C1 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = F372D60D2315A09B0094A6C1 /* Data */; };
+		F372D6102315A1360094A6C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372D60F2315A1360094A6C1 /* Data.swift */; };
 		F3E356762305320D00E27702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E356752305320D00E27702 /* AppDelegate.swift */; };
 		F3E356782305320D00E27702 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E356772305320D00E27702 /* SceneDelegate.swift */; };
-		F3E3567A2305320D00E27702 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E356792305320D00E27702 /* ContentView.swift */; };
+		F3E3567A2305320D00E27702 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E356792305320D00E27702 /* LandmarkDetail.swift */; };
 		F3E3567C2305320E00E27702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E3567B2305320E00E27702 /* Assets.xcassets */; };
 		F3E3567F2305320E00E27702 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E3567E2305320E00E27702 /* Preview Assets.xcassets */; };
 		F3E356822305320E00E27702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E356802305320E00E27702 /* LaunchScreen.storyboard */; };
@@ -39,10 +42,13 @@
 /* Begin PBXFileReference section */
 		F372D60723159D780094A6C1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		F372D60923159E120094A6C1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F372D60B2315A0580094A6C1 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		F372D60D2315A09B0094A6C1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		F372D60F2315A1360094A6C1 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F3E356722305320D00E27702 /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E356752305320D00E27702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3E356772305320D00E27702 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3E356792305320D00E27702 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3E356792305320D00E27702 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		F3E3567B2305320E00E27702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3E3567E2305320E00E27702 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3E356812305320E00E27702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,9 +111,12 @@
 			children = (
 				F3E356752305320D00E27702 /* AppDelegate.swift */,
 				F3E356772305320D00E27702 /* SceneDelegate.swift */,
-				F3E356792305320D00E27702 /* ContentView.swift */,
+				F3E356792305320D00E27702 /* LandmarkDetail.swift */,
 				F372D60723159D780094A6C1 /* CircleImage.swift */,
 				F372D60923159E120094A6C1 /* MapView.swift */,
+				F372D60F2315A1360094A6C1 /* Data.swift */,
+				F372D60B2315A0580094A6C1 /* Landmark.swift */,
+				F372D60D2315A09B0094A6C1 /* Data */,
 				F3E3567B2305320E00E27702 /* Assets.xcassets */,
 				F3E356802305320E00E27702 /* LaunchScreen.storyboard */,
 				F3E356832305320E00E27702 /* Info.plist */,
@@ -246,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F372D60E2315A09B0094A6C1 /* Data in Resources */,
 				F3E356822305320E00E27702 /* LaunchScreen.storyboard in Resources */,
 				F3E3567F2305320E00E27702 /* Preview Assets.xcassets in Resources */,
 				F3E3567C2305320E00E27702 /* Assets.xcassets in Resources */,
@@ -273,11 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F372D6102315A1360094A6C1 /* Data.swift in Sources */,
 				F3E356762305320D00E27702 /* AppDelegate.swift in Sources */,
 				F372D60823159D780094A6C1 /* CircleImage.swift in Sources */,
 				F372D60A23159E120094A6C1 /* MapView.swift in Sources */,
 				F3E356782305320D00E27702 /* SceneDelegate.swift in Sources */,
-				F3E3567A2305320D00E27702 /* ContentView.swift in Sources */,
+				F3E3567A2305320D00E27702 /* LandmarkDetail.swift in Sources */,
+				F372D60C2315A0580094A6C1 /* Landmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcmikius.Landmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcmikius.Landmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
