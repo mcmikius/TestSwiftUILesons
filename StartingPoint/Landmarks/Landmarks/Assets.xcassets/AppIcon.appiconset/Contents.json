@@ -82,9 +82,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "landmark_app_icon_76x76.png",
+      "size" : "76x76",
       "scale" : "1x"
     },
     {
