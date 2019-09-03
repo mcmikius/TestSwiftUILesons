@@ -30,8 +30,8 @@ struct ProfileEditor: View {
             }
             
             VStack(alignment: .leading, spacing: 20) {
-                Text("Seasonal Photo").bold()
-                Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
+//                Text("Seasonal Photo").bold()
+                Picker({ Text("Seasonal Photo").bold() }, selection: $profile.seasonalPhoto) {
                     ForEach(Profile.Season.allCases.identified(by: \.self)) { season in
                         Text(season.rawValue).tag(season)
                     }
