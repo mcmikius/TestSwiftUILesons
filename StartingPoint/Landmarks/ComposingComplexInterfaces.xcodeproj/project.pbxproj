@@ -45,6 +45,7 @@
 		B7D587BE229F82FF006E8DCF /* HikeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D587BD229F82FF006E8DCF /* HikeGraph.swift */; };
 		B7D587C0229F830B006E8DCF /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = B7D587BF229F830B006E8DCF /* hikeData.json */; };
 		F34DB545231E28ED00252908 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34DB544231E28ED00252908 /* Home.swift */; };
+		F3844A82231E3195009F7BF5 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3844A81231E3195009F7BF5 /* CategoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		B7D587BF229F830B006E8DCF /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
 		C4E4AAA0C4E4035000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F34DB544231E28ED00252908 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F3844A81231E3195009F7BF5 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				B7D587BB229F82EB006E8DCF /* HikeDetail.swift */,
 				B7310DD0229F6839001079B9 /* HexagonParameters.swift */,
 				F34DB544231E28ED00252908 /* Home.swift */,
+				F3844A81231E3195009F7BF5 /* CategoryRow.swift */,
 				B739487D229F1C0100C47603 /* Supporting Views */,
 				B7394883229F291A00C47603 /* Resources */,
 				B739486B229F194200C47603 /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3844A82231E3195009F7BF5 /* CategoryRow.swift in Sources */,
 				B7394882229F28B900C47603 /* Data.swift in Sources */,
 				F34DB545231E28ED00252908 /* Home.swift in Sources */,
 				B7310DD3229F6CA9001079B9 /* Badge.swift in Sources */,
