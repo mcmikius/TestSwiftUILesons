@@ -57,6 +57,7 @@
 		B7D587E922A09809006E8DCF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D587E822A09809006E8DCF /* Data.swift */; };
 		F332E21C231E78900004C01A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332E21B231E78900004C01A /* PageViewController.swift */; };
 		F332E21E231E79F50004C01A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F332E21D231E79F50004C01A /* PageView.swift */; };
+		F36E13DA231E96BE00BD6AD7 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E13D9231E96BE00BD6AD7 /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		C4E4AAA0C4E4035000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F332E21B231E78900004C01A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F332E21D231E79F50004C01A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		F36E13D9231E96BE00BD6AD7 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				B7310DD0229F6839001079B9 /* HexagonParameters.swift */,
 				F332E21B231E78900004C01A /* PageViewController.swift */,
 				F332E21D231E79F50004C01A /* PageView.swift */,
+				F36E13D9231E96BE00BD6AD7 /* PageControl.swift */,
 				B739487D229F1C0100C47603 /* Supporting Views */,
 				B7394883229F291A00C47603 /* Resources */,
 				B739486B229F194200C47603 /* Assets.xcassets */,
@@ -377,6 +380,7 @@
 				B739489F229F2D9700C47603 /* LandmarkRow.swift in Sources */,
 				F332E21E231E79F50004C01A /* PageView.swift in Sources */,
 				B7D587DB22A08D67006E8DCF /* ProfileSummary.swift in Sources */,
+				F36E13DA231E96BE00BD6AD7 /* PageControl.swift in Sources */,
 				B7D2AAC5229F4D7C0061E5F5 /* UserData.swift in Sources */,
 				B7394881229F28B900C47603 /* Landmark.swift in Sources */,
 				B7D587DF22A08E1A006E8DCF /* ProfileEditor.swift in Sources */,
