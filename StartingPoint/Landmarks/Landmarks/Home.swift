@@ -1,5 +1,5 @@
 //
-//  CategoryHome.swift
+//  Home.swift
 //  Landmarks
 //
 //  Created by Mykhailo Bondarenko on 03.09.2019.
