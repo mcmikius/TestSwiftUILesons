@@ -161,7 +161,8 @@
 				B73948A0229F2E1F00C47603 /* LandmarkList.swift */,
 				B739489E229F2D9700C47603 /* LandmarkRow.swift */,
 				B7394869229F194000C47603 /* LandmarkDetail.swift */,
-				F38779D6231E37050063AFFD /* Profile */,
+				F38779D7231E37210063AFFD /* ProfileHost.swift */,
+				F38779D9231E377D0063AFFD /* ProfileSummary.swift */,
 				B7D587B5229F825D006E8DCF /* HikeView.swift */,
 				B7D587BB229F82EB006E8DCF /* HikeDetail.swift */,
 				B7310DD0229F6839001079B9 /* HexagonParameters.swift */,
@@ -230,15 +231,6 @@
 				B73948A2229F3E2200C47603 /* charleyrivers.jpg */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		F38779D6231E37050063AFFD /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				F38779D7231E37210063AFFD /* ProfileHost.swift */,
-				F38779D9231E377D0063AFFD /* ProfileSummary.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
