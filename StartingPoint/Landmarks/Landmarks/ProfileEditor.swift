@@ -20,19 +20,19 @@ struct ProfileEditor: View {
     var body: some View {
         List {
             HStack {
-                Text(string: "Username").bold()
+                Text("Username").bold()
                 Divider()
                 TextField("Username", text: $profile.username)
             }
             
             Toggle(isOn: $profile.prefersNotifications) {
-                Text(string: "Enable Notifications")
+                Text("Enable Notifications")
             }
             
             VStack(alignment: .leading, spacing: 20) {
-//                Text("Seasonal Photo").bold()
-                Picker({ Text("Seasonal Photo").bold() }, selection: $profile.seasonalPhoto) {
-                    ForEach(Profile.Season.allCases.identified(by: \.self)) { season in
+                Text("Seasonal Photo").bold()
+                Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
+                    ForEach(Profile.Season.allCases, id: \.self) { season in
                         Text(season.rawValue).tag(season)
                     }
                 }
@@ -42,12 +42,12 @@ struct ProfileEditor: View {
             .padding(.top)
             
             VStack(alignment: .leading, spacing: 20) {
+                Text("Goal Date").bold()
                 DatePicker(
+                    "Goal Date",
                     selection: $profile.goalDate,
                     in: dateRange,
-                    displayedComponents: .date,
-                    label: { Text("Due Date").bold() }
-                )
+                    displayedComponents: .date)
             }
             .padding(.top)
         }
