@@ -1,3 +1,3 @@
-# Composing Complex Interfaces
+# Working with UI Controls
 
-Use this project to code along with the [Composing Complex Interfaces](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces) tutorial.
+Use this project to code along with the [Working with UI Controls](https://developer.apple.com/tutorials/swiftui/working-with-ui-controls) tutorial.
