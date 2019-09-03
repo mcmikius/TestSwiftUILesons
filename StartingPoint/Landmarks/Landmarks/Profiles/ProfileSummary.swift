@@ -1,21 +1,20 @@
-//
-//  ProfileSummary.swift
-//  Landmarks
-//
-//  Created by Mykhailo Bondarenko on 03.09.2019.
-//  Copyright © 2019 Apple. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that summarizes a profile.
+*/
 
 import SwiftUI
 
 struct ProfileSummary: View {
     var profile: Profile
     
-    static let goalFormat: DateFormatter = {
+    static var goalFormat: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, yyyy"
         return formatter
-    }()
+    }
     
     var body: some View {
         List {
@@ -38,8 +37,7 @@ struct ProfileSummary: View {
                         
                         HikeBadge(name: "Earth Day")
                             .hueRotation(Angle(degrees: 90))
-                        
-                        
+                               
                         HikeBadge(name: "Tenth Hike")
                             .grayscale(0.5)
                             .hueRotation(Angle(degrees: 45))
@@ -57,7 +55,6 @@ struct ProfileSummary: View {
         }
     }
 }
-
 
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {

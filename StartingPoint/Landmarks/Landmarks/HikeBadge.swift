@@ -1,10 +1,9 @@
-//
-//  HikeBadge.swift
-//  Landmarks
-//
-//  Created by Mykhailo Bondarenko on 03.09.2019.
-//  Copyright © 2019 Apple. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that shows a badge for hiking.
+*/
 
 import SwiftUI
 
@@ -22,7 +21,6 @@ struct HikeBadge: View {
         }
     }
 }
-
 
 struct HikeBadge_Previews: PreviewProvider {
     static var previews: some View {

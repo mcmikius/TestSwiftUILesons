@@ -1,10 +1,9 @@
-//
-//  ProfileEditor.swift
-//  Landmarks
-//
-//  Created by Mykhailo Bondarenko on 03.09.2019.
-//  Copyright © 2019 Apple. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+An editable profile view.
+*/
 
 import SwiftUI
 
@@ -31,12 +30,12 @@ struct ProfileEditor: View {
             
             VStack(alignment: .leading, spacing: 20) {
                 Text("Seasonal Photo").bold()
+                
                 Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
                     ForEach(Profile.Season.allCases, id: \.self) { season in
                         Text(season.rawValue).tag(season)
                     }
                 }
-                    
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding(.top)

@@ -1,3 +1,3 @@
-# Working with UI Controls
+# Interfacing with UIKit
 
-Use this project to code along with the [Working with UI Controls](https://developer.apple.com/tutorials/swiftui/working-with-ui-controls) tutorial.
+Use this project to code along with the [Interfacing with UIKit](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit) tutorial.
