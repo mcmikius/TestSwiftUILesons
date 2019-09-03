@@ -1,9 +1,9 @@
 /*
- See LICENSE folder for this sample’s licensing information.
- 
- Abstract:
- A single line in the graph.
- */
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A single line in the graph.
+*/
 
 import SwiftUI
 
@@ -23,8 +23,8 @@ struct GraphCapsule: View {
     
     var animation: Animation {
         Animation.spring(dampingFraction: 0.5)
-        .speed(2)
-        .delay(0.03 * Double(index))
+        	.speed(2)
+         	.delay(0.03 * Double(index))
     }
     
     var body: some View {

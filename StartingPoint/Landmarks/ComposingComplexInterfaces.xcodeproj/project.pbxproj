@@ -47,8 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F5E5FE04F5E5A8000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		4F6465F04F6464F000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = ../Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		684E6140684E5BF000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		69A5310069A575F000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = ../Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B7310DD0229F6839001079B9 /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		B7310DD2229F6CA9001079B9 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		B7394862229F194000C47603 /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,19 +102,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F5E46404F5E4B2000000001 /* LICENSE */ = {
+		684EB6D0684EB26000000001 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
-				4F5E5FE04F5E5A8000000001 /* LICENSE.txt */,
+				684E6140684E5BF000000001 /* LICENSE.txt */,
 			);
 			name = LICENSE;
 			path = ../LICENSE;
 			sourceTree = "<group>";
 		};
-		4F6468B04F64613000000001 /* Configuration */ = {
+		69A510F069A3AE5000000001 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				4F6465F04F6464F000000001 /* SampleCode.xcconfig */,
+				69A5310069A575F000000001 /* SampleCode.xcconfig */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -125,8 +125,8 @@
 				C4E4AAA0C4E4035000000001 /* README.md */,
 				B7394864229F194000C47603 /* Landmarks */,
 				B7394863229F194000C47603 /* Products */,
-				4F6468B04F64613000000001 /* Configuration */,
-				4F5E46404F5E4B2000000001 /* LICENSE */,
+				69A510F069A3AE5000000001 /* Configuration */,
+				684EB6D0684EB26000000001 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B739485D229F194000C47603 /* Build configuration list for PBXProject "AnimatingViewsAndTransitions" */;
+			buildConfigurationList = B739485D229F194000C47603 /* Build configuration list for PBXProject "ComposingComplexInterfaces" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -340,7 +340,7 @@
 /* Begin XCBuildConfiguration section */
 		B7394874229F194200C47603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F6465F04F6464F000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 69A5310069A575F000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -401,7 +401,7 @@
 		};
 		B7394875229F194200C47603 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F6465F04F6464F000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 69A5310069A575F000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -456,7 +456,7 @@
 		};
 		B7394877229F194200C47603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F6465F04F6464F000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 69A5310069A575F000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,7 +478,7 @@
 		};
 		B7394878229F194200C47603 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F6465F04F6464F000000001 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 69A5310069A575F000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -501,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B739485D229F194000C47603 /* Build configuration list for PBXProject "AnimatingViewsAndTransitions" */ = {
+		B739485D229F194000C47603 /* Build configuration list for PBXProject "ComposingComplexInterfaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B7394874229F194200C47603 /* Debug */,
