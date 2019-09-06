@@ -49,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F30803F62322456000D11438 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3241218232229530099067F /* HomeView.swift */,
+				F3241230232236A40099067F /* DrinkRow.swift */,
+				F324122E2322342A0099067F /* DrinkItem.swift */,
+				F324123223223C150099067F /* DrinkDetail.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F30803F72322457100D11438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F324122C232232FE0099067F /* Drink.swift */,
+				F324122A232231760099067F /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F3241208232229530099067F = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +90,8 @@
 			children = (
 				F3241214232229530099067F /* AppDelegate.swift */,
 				F3241216232229530099067F /* SceneDelegate.swift */,
-				F3241218232229530099067F /* HomeView.swift */,
-				F3241230232236A40099067F /* DrinkRow.swift */,
-				F324122E2322342A0099067F /* DrinkItem.swift */,
-				F324123223223C150099067F /* DrinkDetail.swift */,
-				F324122C232232FE0099067F /* Drink.swift */,
-				F324122A232231760099067F /* Data.swift */,
+				F30803F62322456000D11438 /* Views */,
+				F30803F72322457100D11438 /* Model */,
 				F324121A232229550099067F /* Assets.xcassets */,
 				F324121F232229550099067F /* LaunchScreen.storyboard */,
 				F3241222232229550099067F /* Info.plist */,
