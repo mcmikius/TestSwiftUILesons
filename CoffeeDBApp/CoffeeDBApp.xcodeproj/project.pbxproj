@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F3241215232229530099067F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3241214232229530099067F /* AppDelegate.swift */; };
 		F3241217232229530099067F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3241216232229530099067F /* SceneDelegate.swift */; };
-		F3241219232229530099067F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3241218232229530099067F /* ContentView.swift */; };
+		F3241219232229530099067F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3241218232229530099067F /* HomeView.swift */; };
 		F324121B232229550099067F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F324121A232229550099067F /* Assets.xcassets */; };
 		F324121E232229550099067F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F324121D232229550099067F /* Preview Assets.xcassets */; };
 		F3241221232229550099067F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F324121F232229550099067F /* LaunchScreen.storyboard */; };
@@ -17,13 +17,14 @@
 		F324122B232231760099067F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324122A232231760099067F /* Data.swift */; };
 		F324122D232232FE0099067F /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324122C232232FE0099067F /* Drink.swift */; };
 		F324122F2322342A0099067F /* DrinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324122E2322342A0099067F /* DrinkItem.swift */; };
+		F3241231232236A40099067F /* DrinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3241230232236A40099067F /* DrinkRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3241211232229530099067F /* CoffeeDBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeDBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3241214232229530099067F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3241216232229530099067F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3241218232229530099067F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3241218232229530099067F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F324121A232229550099067F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F324121D232229550099067F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3241220232229550099067F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		F324122A232231760099067F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F324122C232232FE0099067F /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		F324122E2322342A0099067F /* DrinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkItem.swift; sourceTree = "<group>"; };
+		F3241230232236A40099067F /* DrinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 			children = (
 				F3241214232229530099067F /* AppDelegate.swift */,
 				F3241216232229530099067F /* SceneDelegate.swift */,
-				F3241218232229530099067F /* ContentView.swift */,
+				F3241218232229530099067F /* HomeView.swift */,
+				F3241230232236A40099067F /* DrinkRow.swift */,
 				F324122E2322342A0099067F /* DrinkItem.swift */,
 				F324122C232232FE0099067F /* Drink.swift */,
 				F324122A232231760099067F /* Data.swift */,
@@ -161,7 +164,8 @@
 			files = (
 				F3241215232229530099067F /* AppDelegate.swift in Sources */,
 				F3241217232229530099067F /* SceneDelegate.swift in Sources */,
-				F3241219232229530099067F /* ContentView.swift in Sources */,
+				F3241231232236A40099067F /* DrinkRow.swift in Sources */,
+				F3241219232229530099067F /* HomeView.swift in Sources */,
 				F324122D232232FE0099067F /* Drink.swift in Sources */,
 				F324122B232231760099067F /* Data.swift in Sources */,
 				F324122F2322342A0099067F /* DrinkItem.swift in Sources */,
