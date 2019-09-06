@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1001,
+        "name": "Capuchino",
+        "imageName": "Capuchino",
+        "description": "Variations of the drink involve the use of cream instead of milk, and flavoring with cinnamon or chocolate powder. It is typically smaller in volume than a caffè latte, with a thicker layer of microfoam. The name comes from the Capuchin friars, referring to the colour of their habits, and in this context referring to the colour of the beverage when milk is added in small portion to dark, brewed coffee (today mostly espresso). The physical appearance of a modern cappuccino with espresso créma and steamed milk is a result of a long evolution of the drink. The Viennese bestowed the name Kapuziner, possibly in the 18th century, on a version that included whipped cream and spices of unknown origin. The Italian cappuccino was unknown outside Italy until the 1930s, and seems to be born out of Viennese-style cafés in Trieste and other cities in the former Austria in the first decades of the 20th century. The drink has since spread worldwide and can be found at a number of establishments.",
+        "category": "hot"
+    },
+    {
+        "id": 1002,
+        "name": "Espresso",
+        "imageName": "Espresso",
+        "description": "Espresso (/ɛˈsprɛsoʊ/ (About this soundlisten), Italian: [esˈprɛsso]) is coffee of Italian origin, brewed by forcing a small amount of nearly boiling water under pressure (expressing) through finely ground coffee beans. Espresso is generally thicker than coffee brewed by other methods, has a higher concentration of suspended and dissolved solids, and has crema on top (a foam with a creamy consistency).[1] As a result of the pressurized brewing process, the flavors and chemicals in a typical cup of espresso are very concentrated. Espresso is also the base for other drinks such as a caffè latte, cappuccino, caffè macchiato, caffè mocha, flat white, or caffè Americano.",
+        "category": "hot"
+    },
+    {
+        "id": 1003,
+        "name": "Cold Brew",
+        "imageName": "ColdBrew",
+        "description": "Cold brewing, also called cold water extraction or cold pressing, is the process of steeping coffee grounds in water at cool temperatures for an extended period. Coarse-ground beans are soaked in water for a prolonged period of time, for 12 to 24 hours. The water is normally kept at room temperature, but chilled water is also used. The grounds are filtered out of the water after they have been steeped using a paper coffee filter, a fine metal sieve, a French press, or felt, in the case of the Toddy brewing system. The result is a coffee concentrate that is diluted with water or milk, and is served hot, over ice, or blended with ice and other ingredients such as chocolate.",
+        "category": "cold"
+    },
+    {
+        "id": 1004,
+        "name": "Iced Coffee",
+        "imageName": "IcedCoffee",
+        "description": "Coffee drinks are made by brewing hot water (or much less commonly, cold water) with ground coffee beans. The brewing is either done slowly by drip or filter, French press or cafetière, percolator, etc., or done very quickly under pressure by an espresso machine, where the coffee is termed espresso—slow-brewed coffees are generally called simply coffee. All coffee drinks are based on either coffee or espresso, in different strengths; some drinks have milk or cream added, some use steamed milk, cream, plant based milk, or foamed milk, some have flavorings or sweeteners, some have alcoholic liqueurs added, some are combinations of coffee with espresso or tea.",
+        "category": "cold"
+    },
+    {
+        "id": 1005,
+        "name": "Latte",
+        "imageName": "Latte",
+        "description": "A latte (/ˈlɑːteɪ/ or /ˈlæteɪ/)[1][2] is a coffee drink made with espresso and steamed milk. The term as used in English is a shortened form of the Italian caffè e latte[3] [kafˌfɛ e lˈlatte], caffelatte [kaffeˈlatte] or caffellatte [kaffelˈlatte], which means milk coffee. The word is also sometimes spelled latté or lattè in English with different kinds of accent marks, which can be a hyperforeignism or a deliberate attempt to indicate that the word is not pronounced according to the rules of English orthography.",
+        "category": "hot"
+    },
+    {
+        "id": 1006,
+        "name": "Iced Capuchino",
+        "imageName": "IcedCapuchino",
+        "description": "A cappuccino (/ˌkæpʊˈtʃiːnoʊ/ (About this soundlisten); Italian pronunciation: [kapputˈtʃiːno] Italian plural cappuccini) is an espresso-based coffee drink that originated in Italy, and is traditionally prepared with steamed milk foam (microfoam). Variations of the drink involve the use of cream instead of milk, and flavoring with cinnamon or chocolate powder. It is typically smaller in volume than a caffè latte, with a thicker layer of microfoam.",
+        "category": "cold"
+    }
+]
