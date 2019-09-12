@@ -8,39 +8,12 @@
 
 import UIKit
 
-@propertyWrapper
-struct UserDefault<T> {
-    let key: String
-    let defaultValue: T
-    
-    var value: T {
-        get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
-        } set {
-            UserDefaults.standard.set(newValue, forKey: key)
-        }
-    }
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    var firstLaunch: Bool {
-        get {
-            return UserDefaults.standard.object(forKey: "firstLaunch") as? Bool ?? false
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "firstLaunch")
-        }
-    }
-
-    @UserDefault(key: "username", defaultValue: "user")
-    var username: String
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        print("My username: \(username)")
-        username = "Brian"
         
         return true
     }
