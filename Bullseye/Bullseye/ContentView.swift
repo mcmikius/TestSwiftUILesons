@@ -18,19 +18,21 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            MARK: - Target row
+            Spacer()
+            //            MARK: - Target row
             HStack {
                 Text("Put the bullseye as close as you can to: ")
                 Text("100")
             }
-//            MARK: - Slider row
+            Spacer()
+            //            MARK: - Slider row
             HStack {
                 Text("1")
                 Slider(value: .constant(10))
                 Text("100")
             }
-            
-//            MARK: - Button row
+            Spacer()
+            //            MARK: - Button row
             Button(action: {
                 print("Button pressed!")
                 self.alertIsVisible = true
@@ -40,7 +42,7 @@ struct ContentView: View {
             .alert(isPresented: $alertIsVisible) { () -> Alert in
                 return Alert(title: Text("Hello there!"), message: Text("this is my first pop-up"), dismissButton: .default(Text("Awesome")))
             }
-            
+            Spacer()
             /*
              Button(action: {
              print("Button pressed!")
@@ -53,7 +55,7 @@ struct ContentView: View {
              }
              */
             
-//            MARK: - Score row
+            //            MARK: - Score row
             HStack {
                 Button(action: {
                     print("Button pressed!")
@@ -73,7 +75,7 @@ struct ContentView: View {
                     Text("Info")
                 }
             }
-        .padding()
+            .padding(.bottom, 20)
         }
     }
 }
