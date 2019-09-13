@@ -54,6 +54,26 @@ struct ContentView: View {
              */
             
 //            MARK: - Score row
+            HStack {
+                Button(action: {
+                    print("Button pressed!")
+                }) {
+                    Text("Start over")
+                }
+                Spacer()
+                Text("Score: ")
+                Text("999999")
+                Spacer()
+                Text("Round: ")
+                Text("999")
+                Spacer()
+                Button(action: {
+                    print("Button pressed!")
+                }) {
+                    Text("Info")
+                }
+            }
+        .padding()
         }
     }
 }
