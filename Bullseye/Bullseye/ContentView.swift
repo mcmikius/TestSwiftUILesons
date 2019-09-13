@@ -18,9 +18,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Welcome to my first app")
-                .fontWeight(.semibold)
-                .foregroundColor(Color.green)
+//            MARK: - Target row
+            HStack {
+                Text("Put the bullseye as close as you can to: ")
+                Text("100")
+            }
+//            MARK: - Slider row
+            HStack {
+                Text("1")
+                Slider(value: .constant(10))
+                Text("100")
+            }
+            
+//            MARK: - Button row
             Button(action: {
                 print("Button pressed!")
                 self.alertIsVisible = true
@@ -42,6 +52,8 @@ struct ContentView: View {
              return Alert(title: Text("Who's there?"), message: Text("Little old lady"), dismissButton: .default(Text("Little old lady, who?")))
              }
              */
+            
+//            MARK: - Score row
         }
     }
 }
