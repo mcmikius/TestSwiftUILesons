@@ -12,6 +12,7 @@ struct ContentView: View {
     
     @State var alertIsVisible: Bool = false
     @State var sliderValue: Double = 50.0
+    @State var target: Int = Int.random(in: 1...100)
     
     //TODO: - remember to delete this later on!
     
@@ -23,7 +24,7 @@ struct ContentView: View {
             //            MARK: - Target row
             HStack {
                 Text("Put the bullseye as close as you can to: ")
-                Text("100")
+                Text("\(self.target)")
             }
             Spacer()
             //            MARK: - Slider row
