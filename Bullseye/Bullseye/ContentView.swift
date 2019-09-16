@@ -83,16 +83,14 @@ struct ContentView: View {
     }
     
     func pointsForCurrentRound() -> Int {
-        
-        var difference: Int
         var roundedValue: Int = Int(self.sliderValue.rounded())
-        if roundedValue > self.target {
-            difference = roundedValue - self.target
-        } else if roundedValue < self.target {
-            difference = self.target - roundedValue
-        } else {
-            difference = 0
+        var difference: Int = self.target - roundedValue
+        if difference < 0 {
+            difference = difference * -1
+//            or difference *= -1
+//            or difference = -difference
         }
+        
         
         var awardedPoints: Int = 100 - difference
         
