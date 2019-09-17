@@ -19,7 +19,9 @@ struct WebinarRowView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center){
                     ForEach(self.items) { item in
-                        CourseItem(object: item)
+                        NavigationLink(destination: DetailScreenView()) {
+                            WebinarItem(object: item)
+                        }
                     }
                 }
             }.frame(height: 190)

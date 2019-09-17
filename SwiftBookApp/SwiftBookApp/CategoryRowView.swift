@@ -8,16 +8,18 @@
 
 import SwiftUI
 
-struct CourseRowView: View {
+struct CategoryRowView: View {
     var categoryName: String
     var items: [ProductsResponse]
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
             Text(self.categoryName).font(.headline).padding(.leading, 15).padding(.top, 5)
-            ScrollView{
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center){
                     ForEach(self.items) { item in
-                        CourseItem(object: item)
+                        NavigationLink(destination: DetailScreenView()) {
+                            CategoryItem(object: item)
+                        }
                     }
                 }
             }.frame(height: 190)
@@ -25,8 +27,8 @@ struct CourseRowView: View {
     }
 }
 
-struct CourseRowView_Previews: PreviewProvider {
+struct CategoryRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseRowView(categoryName: materialResponse[0].category.rawValue, items: Array(materialResponse.prefix(3)))
+        CategoryRowView(categoryName: materialResponse[0].category.rawValue, items: Array(materialResponse.prefix(3)))
     }
 }
