@@ -9,12 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var categories: [String: [ProductsResponse]] {
+        .init(grouping: materialResponse, by: { $0.category.rawValue})
+    }
+    
     var body: some View {
         NavigationView {
-            List(userResponse) { user in
-                CellView(user: user)
+            List {
+                CellView(user: swiftbook).listRowInsets(EdgeInsets())
+                
+                ForEach(self.categories.keys.sorted(), id: \.self) { key in
+                    CourseRowView(categoryName: key, items: self.categories[key]!)
+//                    if key == "Courses" {
+//                        CourseRowView(categoryName: key, items: self.categories[key]!)
+//                    } else if key == "Webinars" {
+//                        WebinarRowView(categoryName: key, items: self.categories[key]!)
+//                    }
+                }.listRowInsets(EdgeInsets())
+                NavigationLink(destination: FriendsListView()) {
+                    Text("Teachers")
+                }
             }
-        .navigationBarTitle(Text("Friends"))
+            .navigationBarTitle(Text("Homepage"))
         }
     }
 }
