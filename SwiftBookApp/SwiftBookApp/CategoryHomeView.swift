@@ -18,11 +18,10 @@ struct CategoryHomeView: View {
         NavigationView {
             List {
                 CellView(user: swiftbook).listRowInsets(EdgeInsets())
-                
                 ForEach(self.categories.keys.sorted(), id: \.self) { key in
-                    CategoryRowView(categoryName: key, items: self.categories[key]!)
+                    ProductRowView(categoryName: key, items: self.categories[key]!)
 //                    if key == "Courses" {
-//                        CourseRowView(categoryName: key, items: self.categories[key]!)
+//                        CategoryRowView(categoryName: key, items: self.categories[key]!)
 //                    } else if key == "Webinars" {
 //                        WebinarRowView(categoryName: key, items: self.categories[key]!)
 //                    }
