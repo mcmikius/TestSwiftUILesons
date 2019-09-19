@@ -13,6 +13,8 @@ struct ContentView: View {
     @State var alertIsVisible = false
     @State var sliderValue = 50.0
     @State var target = Int.random(in: 1...100)
+    @State var score = 0
+    @State var round = 1
     
     //TODO: - remember to delete this later on!
     
@@ -38,11 +40,16 @@ struct ContentView: View {
             Button(action: {
                 print("Button pressed!")
                 self.alertIsVisible = true
+                
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
             }
             .alert(isPresented: $alertIsVisible) { () -> Alert in
-                return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(sliderValueRounded()).\n" + "Your scored \(pointsForCurrentRound()) points this round"), dismissButton: .default(Text("Awesome")))
+                return Alert(title: Text(alertTitle()), message: Text("The slider's value is \(sliderValueRounded()).\n" + "Your scored \(pointsForCurrentRound()) points this round"), dismissButton: .default(Text("Awesome")) {
+                    self.score = self.score + self.pointsForCurrentRound()
+                    self.target = Int.random(in: 1...100)
+                    self.round += 1
+                    })
             }
             Spacer()
             /*
@@ -66,10 +73,10 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score: ")
-                Text("999999")
+                Text("\(score)")
                 Spacer()
                 Text("Round: ")
-                Text("999")
+                Text("\(round)")
                 Spacer()
                 Button(action: {
                     print("Button pressed!")
@@ -85,8 +92,27 @@ struct ContentView: View {
         Int(sliderValue.rounded())
     }
     
+    func amountOff() -> Int {
+        abs(target - sliderValueRounded())
+    }
+    
     func pointsForCurrentRound() -> Int {
-        100 - abs(target - sliderValueRounded())
+        100 - amountOff()
+    }
+    
+    func alertTitle() -> String {
+        let difference = amountOff()
+        let title: String
+        if difference == 0 {
+            title = "Perfect!"
+        } else if difference < 5 {
+            title = "You almost did it!"
+        } else if difference <= 10 {
+            title = "Not bad."
+        } else {
+            title = "Are even trying?"
+        }
+        return title
     }
     
 }
