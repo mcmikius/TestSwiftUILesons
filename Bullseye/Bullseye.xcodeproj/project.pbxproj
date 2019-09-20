@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F39444802334D4A900076D39 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394447F2334D4A900076D39 /* AboutView.swift */; };
 		F3A707B2232B739100DEC2D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A707B1232B739100DEC2D5 /* AppDelegate.swift */; };
 		F3A707B4232B739100DEC2D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A707B3232B739100DEC2D5 /* SceneDelegate.swift */; };
 		F3A707B6232B739100DEC2D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A707B5232B739100DEC2D5 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F394447F2334D4A900076D39 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F3A707AE232B739100DEC2D5 /* Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A707B1232B739100DEC2D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3A707B3232B739100DEC2D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				F3A707B1232B739100DEC2D5 /* AppDelegate.swift */,
 				F3A707B3232B739100DEC2D5 /* SceneDelegate.swift */,
 				F3A707B5232B739100DEC2D5 /* ContentView.swift */,
+				F394447F2334D4A900076D39 /* AboutView.swift */,
 				F3A707B7232B739200DEC2D5 /* Assets.xcassets */,
 				F3A707BC232B739200DEC2D5 /* LaunchScreen.storyboard */,
 				F3A707BF232B739200DEC2D5 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39444802334D4A900076D39 /* AboutView.swift in Sources */,
 				F3A707B2232B739100DEC2D5 /* AppDelegate.swift in Sources */,
 				F3A707B4232B739100DEC2D5 /* SceneDelegate.swift in Sources */,
 				F3A707B6232B739100DEC2D5 /* ContentView.swift in Sources */,
