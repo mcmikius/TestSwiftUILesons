@@ -14,9 +14,10 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var newOrder = ""
-    @FetchRequest(entity: Order.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Order.drink, ascending: true)
-    ]) var orders: FetchedResults<Order>
+//    @FetchRequest(entity: Order.entity(), sortDescriptors: [
+//        NSSortDescriptor(keyPath: \Order.drink, ascending: true)
+//    ]) var orders: FetchedResults<Order>
+    @FetchRequest(fetchRequest: Order.getAllOrders()) var orders: FetchedResults<Order>
     
     var body: some View {
         NavigationView {
@@ -42,7 +43,7 @@ struct ContentView: View {
                 }
                 Section(header: Text("Your orders")) {
                     ForEach(self.orders, id: \.self) { order in
-                        OrderItemView(drink: order.drink ?? "Noname", createAt: "\(String(describing: order.createdAt))")
+                        OrderItemView(drink: order.drink, createAt: "\(String(describing: order.createdAt))")
                     }.onDelete(perform: removeOrder)
                 }
             }.navigationBarTitle(Text("OrderView"))

@@ -14,6 +14,7 @@
 		F32540622338CD3E0006C726 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32540612338CD3E0006C726 /* Preview Assets.xcassets */; };
 		F32540652338CD3E0006C726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32540632338CD3E0006C726 /* LaunchScreen.storyboard */; };
 		F325406E2338CD9F0006C726 /* CoreDataModelOrder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F325406C2338CD9F0006C726 /* CoreDataModelOrder.xcdatamodeld */; };
+		F32540722338EEE10006C726 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32540712338EEE10006C726 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F32540642338CD3E0006C726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F32540662338CD3E0006C726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F325406D2338CD9F0006C726 /* CoreDataModelOrder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModelOrder.xcdatamodel; sourceTree = "<group>"; };
+		F32540712338EEE10006C726 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				F32540582338CD3C0006C726 /* AppDelegate.swift */,
 				F325405A2338CD3C0006C726 /* SceneDelegate.swift */,
 				F325405C2338CD3C0006C726 /* ContentView.swift */,
+				F32540712338EEE10006C726 /* Order.swift */,
 				F325406C2338CD9F0006C726 /* CoreDataModelOrder.xcdatamodeld */,
 				F325405E2338CD3E0006C726 /* Assets.xcassets */,
 				F32540632338CD3E0006C726 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				F32540592338CD3C0006C726 /* AppDelegate.swift in Sources */,
 				F325405B2338CD3C0006C726 /* SceneDelegate.swift in Sources */,
+				F32540722338EEE10006C726 /* Order.swift in Sources */,
 				F325405D2338CD3C0006C726 /* ContentView.swift in Sources */,
 				F325406E2338CD9F0006C726 /* CoreDataModelOrder.xcdatamodeld in Sources */,
 			);
