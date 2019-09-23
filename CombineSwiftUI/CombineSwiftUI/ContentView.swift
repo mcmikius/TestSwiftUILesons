@@ -9,21 +9,22 @@
 import SwiftUI
 import Combine
 
-//class UserAuthentication: ObservableObject {
-//    let objectWillChange = ObservableObjectPublisher()
-//    var username = "" {
-//        willSet {
-//            objectWillChange.send()
-//        }
-//    }
-//}
-
-class UserSettings: ObservableObject {
-    @Published var username: String = ""
+class UserAuthentication: ObservableObject {
+    let objectWillChange = ObservableObjectPublisher()
+    var username = "" {
+        willSet {
+            objectWillChange.send()
+        }
+    }
 }
 
+//class UserSettings: ObservableObject {
+//    @Published var username: String = ""
+//}
+
 struct ContentView: View {
-    @ObservedObject var settings = UserSettings()
+    
+    @ObservedObject var settings = UserAuthentication()
     
     var body: some View {
         VStack {
@@ -32,6 +33,17 @@ struct ContentView: View {
         }
     }
 }
+
+//struct ContentView: View {
+//    @ObservedObject var settings = UserSettings()
+//
+//    var body: some View {
+//        VStack {
+//            TextField("Username", text: $settings.username).textFieldStyle(RoundedBorderTextFieldStyle())
+//            Text("Your name is: \(settings.username)")
+//        }
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
