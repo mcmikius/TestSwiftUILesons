@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,63 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CombineFramework5Webinar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accept Terms?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-gg-TP8">
+                                <rect key="frame" x="20" y="48" width="119" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NV-MS-EBe">
+                                <rect key="frame" x="20" y="90" width="84" height="30"/>
+                                <state key="normal" title="Make a Post"/>
+                                <connections>
+                                    <action selector="makePostTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndK-LI-BRR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpz-We-u5C">
+                                <rect key="frame" x="20" y="176" width="374" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="vP3-S2-gca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aK5-uo-org">
+                                <rect key="frame" x="345" y="43" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zb9-fC-liz"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aK5-uo-org" firstAttribute="centerY" secondItem="jXm-gg-TP8" secondAttribute="centerY" id="926-0v-klR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gpz-We-u5C" secondAttribute="trailing" constant="20" id="AIb-Wh-MbV"/>
+                            <constraint firstItem="Gpz-We-u5C" firstAttribute="top" secondItem="5NV-MS-EBe" secondAttribute="bottom" constant="56" id="C5J-LL-eHM"/>
+                            <constraint firstItem="jXm-gg-TP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FZ6-eR-ayr"/>
+                            <constraint firstItem="jXm-gg-TP8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Lxp-VK-Mxo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aK5-uo-org" secondAttribute="trailing" constant="20" id="NlM-Il-bKl"/>
+                            <constraint firstItem="5NV-MS-EBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UZj-F8-bOG"/>
+                            <constraint firstItem="Gpz-We-u5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ngR-3v-tjo"/>
+                            <constraint firstItem="5NV-MS-EBe" firstAttribute="top" secondItem="jXm-gg-TP8" secondAttribute="bottom" constant="21" id="oHs-fz-l4f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="acceptTermsSwitch" destination="aK5-uo-org" id="cz3-g0-8TS"/>
+                        <outlet property="makePostButton" destination="5NV-MS-EBe" id="TGL-th-BGi"/>
+                        <outlet property="postLabel" destination="Gpz-We-u5C" id="8V2-bC-laN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="136.95652173913044"/>
         </scene>
     </scenes>
 </document>
