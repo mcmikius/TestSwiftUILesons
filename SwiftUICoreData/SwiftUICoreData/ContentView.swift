@@ -25,7 +25,7 @@ struct ContentView: View {
     
     fileprivate func displayPersons() -> some View {
         return ForEach(persons, id: \.id) { person in
-            NavigationLink(destination: Text("Update Person")) {
+            NavigationLink(destination: UpdatePersonView(personToUpdate: person, isActive: self.$isActive)) {
                 VStack {
                     PersonCellView(image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "person")!), favoriteImage: Image(systemName: person.isFavorite ? "star.fill" : "star"), gender: person.gender ?? "...", age: person.age ?? "...", firstName: person.firstName ?? "...", lastName: person.lastName ?? "...")
                     Text(self.isActive ? "" : "")
