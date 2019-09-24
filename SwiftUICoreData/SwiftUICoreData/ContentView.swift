@@ -13,6 +13,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Person.fetchRequest()) var persons: FetchedResults<Person>
     
+    @State private var isActive = false
     @State private var addImage = false
     @State private var addPerson = false
     @State private var image: UIImage?
@@ -25,7 +26,10 @@ struct ContentView: View {
     fileprivate func displayPersons() -> some View {
         return ForEach(persons, id: \.id) { person in
             NavigationLink(destination: Text("Update Person")) {
-                PersonCellView(image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "person")!), favoriteImage: Image(systemName: person.isFavorite ? "star.fill" : "star"), gender: person.gender ?? "...", age: person.age ?? "...", firstName: person.firstName ?? "...", lastName: person.lastName ?? "...")
+                VStack {
+                    PersonCellView(image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "person")!), favoriteImage: Image(systemName: person.isFavorite ? "star.fill" : "star"), gender: person.gender ?? "...", age: person.age ?? "...", firstName: person.firstName ?? "...", lastName: person.lastName ?? "...")
+                    Text(self.isActive ? "" : "")
+                }
             }
         }.onDelete { IndexSet in
             guard 0 < self.persons.count else { return }
@@ -66,7 +70,10 @@ struct ContentView: View {
                 }
                 
                 personManagedObjectContext.isFavorite = self.isFavorite
-                personManagedObjectContext.photoData = self.image?.pngData()
+                
+                if let imageToData = self.image?.toJpegCompressedData {
+                    personManagedObjectContext.photoData = imageToData
+                }
                 
                 do {
                     try self.managedObjectContext.save()

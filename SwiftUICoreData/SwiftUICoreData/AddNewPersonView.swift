@@ -29,8 +29,8 @@ struct AddNewPersonView: View {
                 TextField("Age", text: self.$age).textFieldStyle(RoundedBorderTextFieldStyle())
             }
             Picker(selection: self.$segmentedControl, label: Text("")) {
-                Text("Male")
-                Text("Female")
+                Text("Male").tag(0)
+                Text("Female").tag(1)
             }.padding().shadow(color: .secondary, radius: 3).pickerStyle(SegmentedPickerStyle())
             Image(systemName: self.isFavorite ? "star.fill" : "star").resizable().frame(width: 50, height: 50).foregroundColor(.yellow).shadow(color: self.isFavorite ? .primary : .secondary, radius: 3).onTapGesture {
                 self.isFavorite.toggle()
