@@ -22,6 +22,22 @@ struct ContentView: View {
     @State private var lastName = ""
     @State private var age = ""
     
+    fileprivate func displayPersons() -> some View {
+        return ForEach(persons, id: \.id) { person in
+            NavigationLink(destination: Text("Update Person")) {
+                PersonCellView(image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "person")!), favoriteImage: Image(systemName: person.isFavorite ? "star.fill" : "star"), gender: person.gender ?? "...", age: person.age ?? "...", firstName: person.firstName ?? "...", lastName: person.lastName ?? "...")
+            }
+        }.onDelete { IndexSet in
+            guard 0 < self.persons.count else { return }
+            self.managedObjectContext.delete(self.persons[IndexSet.first!])
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                print(error, error.localizedDescription)
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -34,17 +50,7 @@ struct ContentView: View {
                     })
                 }
                 List {
-                    ForEach(persons, id: \.id) { person in
-                        PersonCellView(image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "person")!), favoriteImage: Image(systemName: person.isFavorite ? "star.fill" : "star"), gender: person.gender ?? "...", age: person.age ?? "...", firstName: person.firstName ?? "...", lastName: person.lastName ?? "...")
-                    }.onDelete { IndexSet in
-                        guard 0 < self.persons.count else { return }
-                        self.managedObjectContext.delete(self.persons[IndexSet.first!])
-                        do {
-                            try self.managedObjectContext.save()
-                        } catch {
-                            print(error, error.localizedDescription)
-                        }
-                    }
+                    displayPersons()
                 }
             }.sheet(isPresented: self.$addPerson, onDismiss: {
                 guard !self.firstName.isEmpty, !self.lastName.isEmpty, !self.age.isEmpty else { return }

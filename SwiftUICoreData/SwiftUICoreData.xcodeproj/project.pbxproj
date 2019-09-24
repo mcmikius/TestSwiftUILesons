@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F342515D233A60F8007CD2B9 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342515C233A60F8007CD2B9 /* UIImage+extension.swift */; };
 		F3571D5B233A02350098D4BB /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D59233A02350098D4BB /* Person+CoreDataClass.swift */; };
 		F3571D5C233A02350098D4BB /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D5A233A02350098D4BB /* Person+CoreDataProperties.swift */; };
 		F3571D5F233A04600098D4BB /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F342515C233A60F8007CD2B9 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		F3571D59233A02350098D4BB /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F3571D5A233A02350098D4BB /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F342515B233A60D9007CD2B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F342515C233A60F8007CD2B9 /* UIImage+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F3571D5D233A02CB0098D4BB /* Service+CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 				F3571D64233A19670098D4BB /* AddNewPersonView.swift */,
 				F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */,
 				F3571D60233A064C0098D4BB /* ImagePickerView.swift */,
+				F342515B233A60D9007CD2B9 /* Extensions */,
 				F3571D5D233A02CB0098D4BB /* Service+CoreData */,
 				F39272C72339FE8100FD2249 /* Assets.xcassets */,
 				F39272CC2339FE8100FD2249 /* LaunchScreen.storyboard */,
@@ -178,6 +189,7 @@
 				F3571D65233A19670098D4BB /* AddNewPersonView.swift in Sources */,
 				F39272BF2339FE8000FD2249 /* AppDelegate.swift in Sources */,
 				F39272C12339FE8000FD2249 /* SceneDelegate.swift in Sources */,
+				F342515D233A60F8007CD2B9 /* UIImage+extension.swift in Sources */,
 				F3571D5C233A02350098D4BB /* Person+CoreDataProperties.swift in Sources */,
 				F3571D5B233A02350098D4BB /* Person+CoreDataClass.swift in Sources */,
 				F3571D61233A064C0098D4BB /* ImagePickerView.swift in Sources */,
