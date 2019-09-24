@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3571D5B233A02350098D4BB /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D59233A02350098D4BB /* Person+CoreDataClass.swift */; };
+		F3571D5C233A02350098D4BB /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D5A233A02350098D4BB /* Person+CoreDataProperties.swift */; };
+		F3571D5F233A04600098D4BB /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */; };
+		F3571D61233A064C0098D4BB /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D60233A064C0098D4BB /* ImagePickerView.swift */; };
 		F39272BF2339FE8000FD2249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39272BE2339FE8000FD2249 /* AppDelegate.swift */; };
 		F39272C12339FE8000FD2249 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39272C02339FE8000FD2249 /* SceneDelegate.swift */; };
 		F39272C42339FE8000FD2249 /* SwiftUICoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F39272C22339FE8000FD2249 /* SwiftUICoreData.xcdatamodeld */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F3571D59233A02350098D4BB /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3571D5A233A02350098D4BB /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		F3571D60233A064C0098D4BB /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F39272BB2339FE8000FD2249 /* SwiftUICoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39272BE2339FE8000FD2249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39272C02339FE8000FD2249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3571D5D233A02CB0098D4BB /* Service+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F3571D59233A02350098D4BB /* Person+CoreDataClass.swift */,
+				F3571D5A233A02350098D4BB /* Person+CoreDataProperties.swift */,
+			);
+			path = "Service+CoreData";
+			sourceTree = "<group>";
+		};
 		F39272B22339FE8000FD2249 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +75,12 @@
 		F39272BD2339FE8000FD2249 /* SwiftUICoreData */ = {
 			isa = PBXGroup;
 			children = (
+				F3571D5D233A02CB0098D4BB /* Service+CoreData */,
 				F39272BE2339FE8000FD2249 /* AppDelegate.swift */,
 				F39272C02339FE8000FD2249 /* SceneDelegate.swift */,
 				F39272C52339FE8000FD2249 /* ContentView.swift */,
+				F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */,
+				F3571D60233A064C0098D4BB /* ImagePickerView.swift */,
 				F39272C72339FE8100FD2249 /* Assets.xcassets */,
 				F39272CC2339FE8100FD2249 /* LaunchScreen.storyboard */,
 				F39272CF2339FE8100FD2249 /* Info.plist */,
@@ -151,7 +171,11 @@
 			files = (
 				F39272BF2339FE8000FD2249 /* AppDelegate.swift in Sources */,
 				F39272C12339FE8000FD2249 /* SceneDelegate.swift in Sources */,
+				F3571D5C233A02350098D4BB /* Person+CoreDataProperties.swift in Sources */,
+				F3571D5B233A02350098D4BB /* Person+CoreDataClass.swift in Sources */,
+				F3571D61233A064C0098D4BB /* ImagePickerView.swift in Sources */,
 				F39272C62339FE8000FD2249 /* ContentView.swift in Sources */,
+				F3571D5F233A04600098D4BB /* ImagePickerCoordinator.swift in Sources */,
 				F39272C42339FE8000FD2249 /* SwiftUICoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
