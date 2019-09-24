@@ -12,6 +12,7 @@
 		F3571D5F233A04600098D4BB /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */; };
 		F3571D61233A064C0098D4BB /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D60233A064C0098D4BB /* ImagePickerView.swift */; };
 		F3571D63233A08C40098D4BB /* PersonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D62233A08C40098D4BB /* PersonCellView.swift */; };
+		F3571D65233A19670098D4BB /* AddNewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3571D64233A19670098D4BB /* AddNewPersonView.swift */; };
 		F39272BF2339FE8000FD2249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39272BE2339FE8000FD2249 /* AppDelegate.swift */; };
 		F39272C12339FE8000FD2249 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39272C02339FE8000FD2249 /* SceneDelegate.swift */; };
 		F39272C42339FE8000FD2249 /* SwiftUICoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F39272C22339FE8000FD2249 /* SwiftUICoreData.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		F3571D60233A064C0098D4BB /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3571D62233A08C40098D4BB /* PersonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellView.swift; sourceTree = "<group>"; };
+		F3571D64233A19670098D4BB /* AddNewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonView.swift; sourceTree = "<group>"; };
 		F39272BB2339FE8000FD2249 /* SwiftUICoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39272BE2339FE8000FD2249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39272C02339FE8000FD2249 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				F39272C02339FE8000FD2249 /* SceneDelegate.swift */,
 				F39272C52339FE8000FD2249 /* ContentView.swift */,
 				F3571D62233A08C40098D4BB /* PersonCellView.swift */,
+				F3571D64233A19670098D4BB /* AddNewPersonView.swift */,
 				F3571D5E233A04600098D4BB /* ImagePickerCoordinator.swift */,
 				F3571D60233A064C0098D4BB /* ImagePickerView.swift */,
 				F3571D5D233A02CB0098D4BB /* Service+CoreData */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3571D65233A19670098D4BB /* AddNewPersonView.swift in Sources */,
 				F39272BF2339FE8000FD2249 /* AppDelegate.swift in Sources */,
 				F39272C12339FE8000FD2249 /* SceneDelegate.swift in Sources */,
 				F3571D5C233A02350098D4BB /* Person+CoreDataProperties.swift in Sources */,
