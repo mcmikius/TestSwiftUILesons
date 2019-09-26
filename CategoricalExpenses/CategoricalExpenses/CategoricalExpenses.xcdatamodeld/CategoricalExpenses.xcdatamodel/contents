@@ -11,7 +11,7 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="rawExpenses" inverseEntity="Category"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="Category" positionX="-54" positionY="18" width="128" height="73"/>
+        <element name="Expense" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
