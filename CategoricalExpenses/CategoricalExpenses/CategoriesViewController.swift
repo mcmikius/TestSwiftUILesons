@@ -37,6 +37,14 @@ class CategoriesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ExpensesViewController, let selectedRow = self.categoriesTableView.indexPathForSelectedRow?.row else {
+                return
+        }
+        
+        destination.category = categories[selectedRow]
+    }
 
 }
 
