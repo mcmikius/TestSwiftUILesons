@@ -44,6 +44,22 @@ class ExpensesViewController: UIViewController {
         
         destination.category = category
     }
+    
+    func deleteExpense(at indexPath: IndexPath) {
+        guard let expense = category?.expenses?[indexPath.row], let managedContext = expense.managedObjectContext else {
+            return
+        }
+        managedContext.delete(expense)
+        
+        do {
+            try managedContext.save()
+            expensesTableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Could not delete expense")
+            expensesTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
 }
 
 extension ExpensesViewController: UITableViewDataSource {
@@ -63,6 +79,12 @@ extension ExpensesViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteExpense(at: indexPath)
+        }
     }
 }
 
