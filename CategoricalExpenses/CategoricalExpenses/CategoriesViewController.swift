@@ -45,7 +45,23 @@ class CategoriesViewController: UIViewController {
         
         destination.category = categories[selectedRow]
     }
-
+    
+    func deleteCategory(at indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        guard let managedContext = category.managedObjectContext else {
+            return
+        }
+        
+        managedContext.delete(category)
+        do {
+            try managedContext.save()
+            categories.remove(at: indexPath.row)
+            categoriesTableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Could not delete")
+            categoriesTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 
 extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -59,5 +75,11 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = category.title
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteCategory(at: indexPath)
+        }
     }
 }
