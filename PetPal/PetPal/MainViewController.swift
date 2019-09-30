@@ -29,6 +29,7 @@
  */
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
     @IBOutlet private weak var collectionView:UICollectionView!
@@ -50,11 +51,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        do {
-            friends = try context.fetch(Friend.fetchRequest())
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+        refresh()
         showEditButton()
     }
     
@@ -100,6 +97,13 @@ class MainViewController: UIViewController {
             navigationItem.leftBarButtonItem = editButtonItem
         }
     }
+    private func refresh() {
+        do {
+            friends = try context.fetch(Friend.fetchRequest())
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
 }
 
 // Collection View Delegates
@@ -140,17 +144,19 @@ extension MainViewController:UISearchBarDelegate {
         guard let query = searchBar.text else {
             return
         }
-        isFiltered = true
-        filtered = friends.filter({(friend) -> Bool in
-            return friend.name!.contains(query)
-        })
+        let request = Friend.fetchRequest() as NSFetchRequest<Friend>
+        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
+        do {
+            friends = try context.fetch(request)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
         searchBar.resignFirstResponder()
         collectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isFiltered = false
-        filtered.removeAll()
+        refresh()
         searchBar.text = nil
         searchBar.resignFirstResponder()
         collectionView.reloadData()
