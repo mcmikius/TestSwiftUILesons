@@ -14,7 +14,6 @@
 		F378CBB723420CD5002C8029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378CBB623420CD5002C8029 /* Assets.xcassets */; };
 		F378CBBA23420CD5002C8029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F378CBB823420CD5002C8029 /* LaunchScreen.storyboard */; };
 		F378CBC323420D39002C8029 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBC123420D39002C8029 /* Friend+CoreDataClass.swift */; };
-		F378CBC423420D39002C8029 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBC223420D39002C8029 /* Friend+CoreDataProperties.swift */; };
 		F378CBC723420F7C002C8029 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBC523420F7C002C8029 /* PetsViewController.swift */; };
 		F378CBC823420F7C002C8029 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBC623420F7C002C8029 /* MainViewController.swift */; };
 		F3E9622923420FF900EA929D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E9622823420FF900EA929D /* Main.storyboard */; };
@@ -25,6 +24,7 @@
 		F3E96238234211F600EA929D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E96234234211F600EA929D /* Date+Extension.swift */; };
 		F3E9623B234211FE00EA929D /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E96239234211FE00EA929D /* FriendCell.swift */; };
 		F3E9623C234211FE00EA929D /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9623A234211FE00EA929D /* PetCell.swift */; };
+		F3E9623E2342150C00EA929D /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9623D2342150C00EA929D /* Friend+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,6 @@
 		F378CBB923420CD5002C8029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F378CBBB23420CD5002C8029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F378CBC123420D39002C8029 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F378CBC223420D39002C8029 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F378CBC523420F7C002C8029 /* PetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		F378CBC623420F7C002C8029 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F3E9622823420FF900EA929D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		F3E96235234211F600EA929D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F3E96239234211FE00EA929D /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		F3E9623A234211FE00EA929D /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
+		F3E9623D2342150C00EA929D /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +80,10 @@
 		F378CBA923420CD4002C8029 /* PetPal */ = {
 			isa = PBXGroup;
 			children = (
+				F3E9623D2342150C00EA929D /* Friend+CoreDataProperties.swift */,
 				F378CBC123420D39002C8029 /* Friend+CoreDataClass.swift */,
 				F3E96239234211FE00EA929D /* FriendCell.swift */,
 				F3E9623A234211FE00EA929D /* PetCell.swift */,
-				F378CBC223420D39002C8029 /* Friend+CoreDataProperties.swift */,
 				F378CBAA23420CD4002C8029 /* AppDelegate.swift */,
 				F378CBAC23420CD4002C8029 /* SceneDelegate.swift */,
 				F378CBAE23420CD4002C8029 /* ViewController.swift */,
@@ -176,6 +176,7 @@
 			files = (
 				F3E9622C2342106C00EA929D /* PetData.swift in Sources */,
 				F3E9623C234211FE00EA929D /* PetCell.swift in Sources */,
+				F3E9623E2342150C00EA929D /* Friend+CoreDataProperties.swift in Sources */,
 				F3E9622D2342106C00EA929D /* FriendData.swift in Sources */,
 				F3E96238234211F600EA929D /* Date+Extension.swift in Sources */,
 				F378CBAF23420CD4002C8029 /* ViewController.swift in Sources */,
@@ -186,7 +187,6 @@
 				F378CBAB23420CD4002C8029 /* AppDelegate.swift in Sources */,
 				F3E96237234211F600EA929D /* Array+Extensions.swift in Sources */,
 				F378CBAD23420CD4002C8029 /* SceneDelegate.swift in Sources */,
-				F378CBC423420D39002C8029 /* Friend+CoreDataProperties.swift in Sources */,
 				F378CBC723420F7C002C8029 /* PetsViewController.swift in Sources */,
 				F378CBC823420F7C002C8029 /* MainViewController.swift in Sources */,
 			);
