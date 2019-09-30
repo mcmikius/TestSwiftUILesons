@@ -2,9 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A573a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Friend" representedClassName=".Friend" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eyeColor" optional="YES" attributeType="Transformable"/>
         <attribute name="name" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Friend" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Friend" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

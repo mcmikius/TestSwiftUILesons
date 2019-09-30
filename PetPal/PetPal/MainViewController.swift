@@ -85,6 +85,8 @@ class MainViewController: UIViewController {
         let friend = Friend(entity: Friend.entity(), insertInto: context)
         friend.name = data.name
         friend.address = data.address
+        friend.dob = data.dob as Date
+        friend.eyeColor = data.eyeColor
         appDelegate.saveContext()
         friends.append(friend)
         let index = IndexPath(row:friends.count - 1, section:0)
@@ -111,6 +113,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let friend = isFiltered ? filtered[indexPath.row] : friends[indexPath.row]
         cell.nameLabel.text = friend.name!
         cell.addressLabel.text = friend.address
+        cell.ageLabel.text = "Age: \(friend.age)"
+        cell.eyeColorView.backgroundColor = friend.eyeColor as? UIColor
         if let image = images[friend.name!] {
             cell.pictureImageView.image = image
         }
