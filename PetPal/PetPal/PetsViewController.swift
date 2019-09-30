@@ -68,6 +68,7 @@ class PetsViewController: UIViewController {
         request.sortDescriptors = [sort]
         do {
             fetchedRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchedRC.delegate = self
             try fetchedRC.performFetch()
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -92,7 +93,6 @@ class PetsViewController: UIViewController {
             context.delete(pet)
             appDelegate.saveContext()
             refresh()
-            collectionView.deleteItems(at: [indexPath])
         }
     }
     
@@ -105,8 +105,22 @@ class PetsViewController: UIViewController {
         pet.dob = data.dob
         pet.owner = friend
         appDelegate.saveContext()
-        refresh()
-        collectionView.reloadData()
+    }
+}
+
+// Fetched Results Controller Delegate
+extension PetsViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        let index = indexPath ?? (newIndexPath ?? nil)
+        guard let cellIndex = index else {
+            return
+        }
+        switch type {
+        case .insert: collectionView.insertItems(at: [cellIndex])
+        case .delete: collectionView.deleteItems(at: [cellIndex])
+        default: break
+        }
     }
 }
 
