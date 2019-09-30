@@ -24,7 +24,9 @@
 		F3E96238234211F600EA929D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E96234234211F600EA929D /* Date+Extension.swift */; };
 		F3E9623B234211FE00EA929D /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E96239234211FE00EA929D /* FriendCell.swift */; };
 		F3E9623C234211FE00EA929D /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9623A234211FE00EA929D /* PetCell.swift */; };
-		F3E9624223421D9300EA929D /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9624123421D9300EA929D /* Friend+CoreDataProperties.swift */; };
+		F3E9624623423BAD00EA929D /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9624323423BAD00EA929D /* Pet+CoreDataClass.swift */; };
+		F3E9624723423BAD00EA929D /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9624423423BAD00EA929D /* Pet+CoreDataProperties.swift */; };
+		F3E9624823423BAD00EA929D /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E9624523423BAD00EA929D /* Friend+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 		F3E96235234211F600EA929D /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F3E96239234211FE00EA929D /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		F3E9623A234211FE00EA929D /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
-		F3E9624123421D9300EA929D /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3E9624323423BAD00EA929D /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3E9624423423BAD00EA929D /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3E9624523423BAD00EA929D /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,9 @@
 		F378CBA923420CD4002C8029 /* PetPal */ = {
 			isa = PBXGroup;
 			children = (
-				F3E9624123421D9300EA929D /* Friend+CoreDataProperties.swift */,
+				F3E9624323423BAD00EA929D /* Pet+CoreDataClass.swift */,
+				F3E9624423423BAD00EA929D /* Pet+CoreDataProperties.swift */,
+				F3E9624523423BAD00EA929D /* Friend+CoreDataProperties.swift */,
 				F378CBC123420D39002C8029 /* Friend+CoreDataClass.swift */,
 				F3E96239234211FE00EA929D /* FriendCell.swift */,
 				F3E9623A234211FE00EA929D /* PetCell.swift */,
@@ -176,15 +182,17 @@
 			files = (
 				F3E9622C2342106C00EA929D /* PetData.swift in Sources */,
 				F3E9623C234211FE00EA929D /* PetCell.swift in Sources */,
-				F3E9624223421D9300EA929D /* Friend+CoreDataProperties.swift in Sources */,
+				F3E9624623423BAD00EA929D /* Pet+CoreDataClass.swift in Sources */,
 				F3E9622D2342106C00EA929D /* FriendData.swift in Sources */,
 				F3E96238234211F600EA929D /* Date+Extension.swift in Sources */,
 				F378CBAF23420CD4002C8029 /* ViewController.swift in Sources */,
 				F378CBC323420D39002C8029 /* Friend+CoreDataClass.swift in Sources */,
+				F3E9624823423BAD00EA929D /* Friend+CoreDataProperties.swift in Sources */,
 				F378CBB523420CD4002C8029 /* PetPal.xcdatamodeld in Sources */,
 				F3E96236234211F600EA929D /* Int+Extension.swift in Sources */,
 				F3E9623B234211FE00EA929D /* FriendCell.swift in Sources */,
 				F378CBAB23420CD4002C8029 /* AppDelegate.swift in Sources */,
+				F3E9624723423BAD00EA929D /* Pet+CoreDataProperties.swift in Sources */,
 				F3E96237234211F600EA929D /* Array+Extensions.swift in Sources */,
 				F378CBAD23420CD4002C8029 /* SceneDelegate.swift in Sources */,
 				F378CBC723420F7C002C8029 /* PetsViewController.swift in Sources */,

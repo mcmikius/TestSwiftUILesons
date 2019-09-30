@@ -39,7 +39,6 @@ class MainViewController: UIViewController {
     private var fetchResultsController: NSFetchedResultsController<Friend>!
     private var filtered = [Friend]()
     private var isFiltered = false
-    private var friendPets = [String:[String]]()
     private var selected:IndexPath!
     private var picker = UIImagePickerController()
     private var query = ""
@@ -68,12 +67,7 @@ class MainViewController: UIViewController {
             if let index = sender as? IndexPath {
                 let pvc = segue.destination as! PetsViewController
                 let friend = fetchResultsController.object(at: index)
-                if let pets = friendPets[friend.name!] {
-                    pvc.pets = pets
-                }
-                pvc.petAdded = {
-                    self.friendPets[friend.name!] = pvc.pets
-                }
+                pvc.friend = friend
             }
         }
     }
@@ -145,7 +139,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
         let friend = fetchResultsController.object(at: indexPath)
-        cell.nameLabel.text = friend.name!
+        cell.nameLabel.text = friend.name
         cell.addressLabel.text = friend.address
         cell.ageLabel.text = "Age: \(friend.age)"
         cell.eyeColorView.backgroundColor = friend.eyeColor as? UIColor

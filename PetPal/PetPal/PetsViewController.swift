@@ -29,12 +29,18 @@
 */
 
 import UIKit
+import CoreData
 
 class PetsViewController: UIViewController {
 	@IBOutlet private weak var collectionView:UICollectionView!
 	
-	var petAdded:(()->Void)!
-	var pets = [String]()
+    var friend: Friend!
+    
+    private var fetchedRC: NSFetchedResultsController<Pet>!
+    private var query = ""
+    private var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var formatter = DateFormatter()
 
 	private var isFiltered = false
 	private var filtered = [String]()
@@ -44,7 +50,30 @@ class PetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		picker.delegate = self
+        formatter.dateFormat = "d MMM yyyy"
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refresh()
+    }
+    
+    private func refresh() {
+        let request = Pet.fetchRequest() as NSFetchRequest<Pet>
+        if query.isEmpty {
+            request.predicate = NSPredicate(format: "owner = %@", friend)
+        } else {
+            request.predicate = NSPredicate(format: "name CONTAINS[cd] %@ AND owner = %@", query, friend)
+        }
+        let sort = NSSortDescriptor(key: #keyPath(Pet.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        request.sortDescriptors = [sort]
+        do {
+            fetchedRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            try fetchedRC.performFetch()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,57 +82,68 @@ class PetsViewController: UIViewController {
 	
 	// MARK:- Actions
 	@IBAction func addPet() {
-		var pet = PetData()
-		while pets.contains(pet.name) {
-			pet = PetData()
-		}
-		pets.append(pet.name)
-		let index = IndexPath(row:pets.count - 1, section:0)
-		collectionView.insertItems(at: [index])
-		// Call closure
-		petAdded()
+		let data = PetData()
+        let pet = Pet(entity: Pet.entity(), insertInto: context)
+        pet.name = data.name
+        pet.kind = data.kind
+        pet.dob = data.dob
+        pet.owner = friend
+        appDelegate.saveContext()
+        refresh()
+        collectionView.reloadData()
 	}
 }
 
 // Collection View Delegates
 extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		let count = isFiltered ? filtered.count : pets.count
-		return count
+        guard let pets = fetchedRC.fetchedObjects else {
+            return 0
+        }
+        return pets.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
-		let pet = isFiltered ? filtered[indexPath.row] : pets[indexPath.row]
-		cell.nameLabel.text = pet
-		return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
+        let pet = fetchedRC.object(at: indexPath)
+        cell.nameLabel.text = pet.name
+        cell.animalLabel.text = pet.kind
+        if let dob = pet.dob as Date? {
+            cell.dobLabel.text = formatter.string(from: dob)
+        } else {
+            cell.dobLabel.text = "Unknown"
+        }
+        if let data = pet.picture as Data? {
+            cell.pictureImageView.image = UIImage(data: data)
+        } else {
+            cell.pictureImageView.image = UIImage(named: "pet-placeholder")
+        }
+        return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		selected = indexPath
-//		self.navigationController?.present(picker, animated: true, completion: nil)
+		self.navigationController?.present(picker, animated: true, completion: nil)
 	}
 }
 
 // Search Bar Delegate
 extension PetsViewController:UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		guard let query = searchBar.text else {
+		guard let txt = searchBar.text else {
 			return
 		}
-		isFiltered = true
-		filtered = pets.filter({(txt) -> Bool in
-			return txt.contains(query)
-		})
-		searchBar.resignFirstResponder()
+		query = txt
+        refresh()
+        searchBar.resignFirstResponder()
 		collectionView.reloadData()
 	}
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-		isFiltered = false
-		filtered.removeAll()
+        query = ""
 		searchBar.text = nil
 		searchBar.resignFirstResponder()
+        refresh()
 		collectionView.reloadData()
 	}
 }
@@ -112,10 +152,13 @@ extension PetsViewController:UISearchBarDelegate {
 extension PetsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
+        let pet = fetchedRC.object(at: selected)
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-    _ = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
-		collectionView?.reloadItems(at: [selected])
+    let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
+        pet.picture = image.pngData() as Data?
+        appDelegate.saveContext()
+        collectionView?.reloadItems(at: [selected])
 		picker.dismiss(animated: true, completion: nil)
 	}
 }
