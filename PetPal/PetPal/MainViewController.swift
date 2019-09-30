@@ -32,11 +32,11 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
-    @IBOutlet private weak var collectionView:UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var friends = [Friend]()
+    private var fetchResultsController: NSFetchedResultsController<Friend>!
     private var filtered = [Friend]()
     private var isFiltered = false
     private var friendPets = [String:[String]]()
@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "petSegue" {
             if let index = sender as? IndexPath {
                 let pvc = segue.destination as! PetsViewController
-                let friend = friends[index.row]
+                let friend = fetchResultsController.object(at: index)
                 if let pets = friendPets[friend.name!] {
                     pvc.pets = pets
                 }
@@ -94,7 +94,10 @@ class MainViewController: UIViewController {
     
     // MARK:- Private Methods
     private func showEditButton() {
-        if friends.count > 0 {
+        guard let objects = fetchResultsController.fetchedObjects else {
+            return
+        }
+        if objects.count > 0 {
             navigationItem.leftBarButtonItem = editButtonItem
         }
     }
@@ -106,7 +109,8 @@ class MainViewController: UIViewController {
         let sort = NSSortDescriptor(key: #keyPath(Friend.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
         request.sortDescriptors = [sort]
         do {
-            friends = try context.fetch(request)
+            fetchResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            try fetchResultsController.performFetch()
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -116,13 +120,13 @@ class MainViewController: UIViewController {
 // Collection View Delegates
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = isFiltered ? filtered.count : friends.count
+        let count = fetchResultsController.fetchedObjects?.count ?? 0
         return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
-        let friend = isFiltered ? filtered[indexPath.row] : friends[indexPath.row]
+        let friend = fetchResultsController.object(at: indexPath)
         cell.nameLabel.text = friend.name!
         cell.addressLabel.text = friend.address
         cell.ageLabel.text = "Age: \(friend.age)"
@@ -173,7 +177,7 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
-        let friend = isFiltered ? filtered[selected.row] : friends[selected.row]
+        let friend = fetchResultsController.object(at: selected)
         friend.photo = image.pngData() as Data?
         appDelegate.saveContext()
         collectionView?.reloadItems(at: [selected])
