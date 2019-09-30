@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
     private var friendPets = [String:[String]]()
     private var selected:IndexPath!
     private var picker = UIImagePickerController()
-    private var images = [String:UIImage]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,7 @@ class MainViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        showEditButton()
     }
     
     
@@ -115,8 +116,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.addressLabel.text = friend.address
         cell.ageLabel.text = "Age: \(friend.age)"
         cell.eyeColorView.backgroundColor = friend.eyeColor as? UIColor
-        if let image = images[friend.name!] {
-            cell.pictureImageView.image = image
+        if let data = friend.photo as Data? {
+            cell.pictureImageView.image = UIImage(data: data)
+        } else {
+            cell.pictureImageView.image = UIImage(named: "person-placeholder")
         }
         return cell
     }
@@ -162,7 +165,8 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
         
         let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
         let friend = isFiltered ? filtered[selected.row] : friends[selected.row]
-        images[friend.name!] = image
+        friend.photo = image.pngData() as Data?
+        appDelegate.saveContext()
         collectionView?.reloadItems(at: [selected])
         picker.dismiss(animated: true, completion: nil)
     }
