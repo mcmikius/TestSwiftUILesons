@@ -243,10 +243,12 @@
                                 <connections>
                                     <outlet property="dataSource" destination="wRN-XS-gD2" id="S0A-yF-AxP"/>
                                     <outlet property="delegate" destination="wRN-XS-gD2" id="x9c-Lw-cSi"/>
+                                    <outletCollection property="gestureRecognizers" destination="H2M-Gd-9JN" appends="YES" id="HJu-Zf-4xa"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="41J-4s-sMA" firstAttribute="trailing" secondItem="kty-LL-rt6" secondAttribute="trailing" id="CDb-hv-nKd"/>
                             <constraint firstItem="gEe-JH-eUB" firstAttribute="bottom" secondItem="kty-LL-rt6" secondAttribute="bottom" id="EgQ-15-hNr"/>
@@ -257,6 +259,9 @@
                             <constraint firstItem="gEe-JH-eUB" firstAttribute="leading" secondItem="kty-LL-rt6" secondAttribute="leading" id="xi7-ST-8YU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kty-LL-rt6"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="H2M-Gd-9JN" appends="YES" id="KE6-oP-Dlv"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Pets" id="arB-wS-cK2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nGK-DR-nWp">
@@ -270,6 +275,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMq-CZ-rAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="H2M-Gd-9JN">
+                    <connections>
+                        <action selector="handleLongPressWithGestureRecognizer:" destination="wRN-XS-gD2" id="Eev-gp-qwe"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1502" y="143"/>
         </scene>

@@ -1,39 +1,39 @@
 /**
-* Copyright (c) 2018 Razeware LLC
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
-* distribute, sublicense, create a derivative work, and/or sell copies of the 
-* Software in any work that is designed, intended, or marketed for pedagogical or 
-* instructional purposes related to programming, coding, application development, 
-* or information technology.  Permission for such use, copying, modification,
-* merger, publication, distribution, sublicensing, creation of derivative works, 
-* or sale is expressly withheld.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*/
+ * Copyright (c) 2018 Razeware LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+ * distribute, sublicense, create a derivative work, and/or sell copies of the
+ * Software in any work that is designed, intended, or marketed for pedagogical or
+ * instructional purposes related to programming, coding, application development,
+ * or information technology.  Permission for such use, copying, modification,
+ * merger, publication, distribution, sublicensing, creation of derivative works,
+ * or sale is expressly withheld.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 import UIKit
 import CoreData
 
 class PetsViewController: UIViewController {
-	@IBOutlet private weak var collectionView:UICollectionView!
-	
+    @IBOutlet private weak var collectionView:UICollectionView!
+    
     var friend: Friend!
     
     private var fetchedRC: NSFetchedResultsController<Pet>!
@@ -41,15 +41,15 @@ class PetsViewController: UIViewController {
     private var appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var formatter = DateFormatter()
-
-	private var isFiltered = false
-	private var filtered = [String]()
-	private var selected:IndexPath!
-	private var picker = UIImagePickerController()
-
+    
+    private var isFiltered = false
+    private var filtered = [String]()
+    private var selected:IndexPath!
+    private var picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		picker.delegate = self
+        picker.delegate = self
         formatter.dateFormat = "d MMM yyyy"
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -74,15 +74,31 @@ class PetsViewController: UIViewController {
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	// MARK:- Actions
-	@IBAction func addPet() {
-		let data = PetData()
+    
+    // MARK:- Actions
+    
+    @IBAction func handleLongPress(gestureRecognizer: UIGestureRecognizer) {
+        if gestureRecognizer.state != .ended {
+            return
+        }
+        let point = gestureRecognizer.location(in: collectionView)
+        if let indexPath = collectionView.indexPathForItem(at: point) {
+            let pet = fetchedRC.object(at: indexPath)
+            context.delete(pet)
+            appDelegate.saveContext()
+            refresh()
+            collectionView.deleteItems(at: [indexPath])
+        }
+    }
+    
+    
+    @IBAction func addPet() {
+        let data = PetData()
         let pet = Pet(entity: Pet.entity(), insertInto: context)
         pet.name = data.name
         pet.kind = data.kind
@@ -91,19 +107,19 @@ class PetsViewController: UIViewController {
         appDelegate.saveContext()
         refresh()
         collectionView.reloadData()
-	}
+    }
 }
 
 // Collection View Delegates
 extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let pets = fetchedRC.fetchedObjects else {
             return 0
         }
         return pets.count
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
         let pet = fetchedRC.object(at: indexPath)
         cell.nameLabel.text = pet.name
@@ -119,56 +135,56 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.pictureImageView.image = UIImage(named: "pet-placeholder")
         }
         return cell
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		selected = indexPath
-		self.navigationController?.present(picker, animated: true, completion: nil)
-	}
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selected = indexPath
+        self.navigationController?.present(picker, animated: true, completion: nil)
+    }
 }
 
 // Search Bar Delegate
 extension PetsViewController:UISearchBarDelegate {
-	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		guard let txt = searchBar.text else {
-			return
-		}
-		query = txt
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let txt = searchBar.text else {
+            return
+        }
+        query = txt
         refresh()
         searchBar.resignFirstResponder()
-		collectionView.reloadData()
-	}
-	
-	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         query = ""
-		searchBar.text = nil
-		searchBar.resignFirstResponder()
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
         refresh()
-		collectionView.reloadData()
-	}
+        collectionView.reloadData()
+    }
 }
 
 // Image Picker Delegates
 extension PetsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Local variable inserted by Swift 4.2 migrator.
         let pet = fetchedRC.object(at: selected)
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
-    let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
         pet.picture = image.pngData() as Data?
         appDelegate.saveContext()
         collectionView?.reloadItems(at: [selected])
-		picker.dismiss(animated: true, completion: nil)
-	}
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }
