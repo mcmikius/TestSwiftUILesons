@@ -86,9 +86,9 @@ class MainViewController: UIViewController {
         friend.dob = data.dob as Date
         friend.eyeColor = data.eyeColor
         appDelegate.saveContext()
-        friends.append(friend)
-        let index = IndexPath(row:friends.count - 1, section:0)
-        collectionView?.insertItems(at: [index])
+        refresh()
+        collectionView.reloadData()
+        showEditButton()
     }
     
     // MARK:- Private Methods
@@ -98,8 +98,11 @@ class MainViewController: UIViewController {
         }
     }
     private func refresh() {
+        let request = Friend.fetchRequest() as NSFetchRequest<Friend>
+        let sort = NSSortDescriptor(key: #keyPath(Friend.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        request.sortDescriptors = [sort]
         do {
-            friends = try context.fetch(Friend.fetchRequest())
+            friends = try context.fetch(request)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
