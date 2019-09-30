@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
     private var friendPets = [String:[String]]()
     private var selected:IndexPath!
     private var picker = UIImagePickerController()
+    private var query = ""
     
     
     override func viewDidLoad() {
@@ -99,6 +100,9 @@ class MainViewController: UIViewController {
     }
     private func refresh() {
         let request = Friend.fetchRequest() as NSFetchRequest<Friend>
+        if !query.isEmpty {
+            request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
+        }
         let sort = NSSortDescriptor(key: #keyPath(Friend.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
         request.sortDescriptors = [sort]
         do {
@@ -144,24 +148,20 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // Search Bar Delegate
 extension MainViewController:UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text else {
+        guard let txt = searchBar.text else {
             return
         }
-        let request = Friend.fetchRequest() as NSFetchRequest<Friend>
-        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
-        do {
-            friends = try context.fetch(request)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+        query = txt
+        refresh()
         searchBar.resignFirstResponder()
         collectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        refresh()
+        query = ""
         searchBar.text = nil
         searchBar.resignFirstResponder()
+        refresh()
         collectionView.reloadData()
     }
 }
