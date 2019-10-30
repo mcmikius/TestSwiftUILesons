@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F378CBAB23420CD4002C8029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBAA23420CD4002C8029 /* AppDelegate.swift */; };
 		F378CBAD23420CD4002C8029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBAC23420CD4002C8029 /* SceneDelegate.swift */; };
-		F378CBAF23420CD4002C8029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378CBAE23420CD4002C8029 /* ViewController.swift */; };
 		F378CBB523420CD4002C8029 /* PetPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F378CBB323420CD4002C8029 /* PetPal.xcdatamodeld */; };
 		F378CBB723420CD5002C8029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378CBB623420CD5002C8029 /* Assets.xcassets */; };
 		F378CBBA23420CD5002C8029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F378CBB823420CD5002C8029 /* LaunchScreen.storyboard */; };
@@ -33,7 +32,6 @@
 		F378CBA723420CD4002C8029 /* PetPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378CBAA23420CD4002C8029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F378CBAC23420CD4002C8029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F378CBAE23420CD4002C8029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F378CBB423420CD4002C8029 /* PetPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetPal.xcdatamodel; sourceTree = "<group>"; };
 		F378CBB623420CD5002C8029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F378CBB923420CD5002C8029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				F3E9623A234211FE00EA929D /* PetCell.swift */,
 				F378CBAA23420CD4002C8029 /* AppDelegate.swift */,
 				F378CBAC23420CD4002C8029 /* SceneDelegate.swift */,
-				F378CBAE23420CD4002C8029 /* ViewController.swift */,
 				F378CBC623420F7C002C8029 /* MainViewController.swift */,
 				F378CBC523420F7C002C8029 /* PetsViewController.swift */,
 				F3E9622B2342106C00EA929D /* FriendData.swift */,
@@ -185,7 +182,6 @@
 				F3E9624623423BAD00EA929D /* Pet+CoreDataClass.swift in Sources */,
 				F3E9622D2342106C00EA929D /* FriendData.swift in Sources */,
 				F3E96238234211F600EA929D /* Date+Extension.swift in Sources */,
-				F378CBAF23420CD4002C8029 /* ViewController.swift in Sources */,
 				F378CBC323420D39002C8029 /* Friend+CoreDataClass.swift in Sources */,
 				F3E9624823423BAD00EA929D /* Friend+CoreDataProperties.swift in Sources */,
 				F378CBB523420CD4002C8029 /* PetPal.xcdatamodeld in Sources */,
