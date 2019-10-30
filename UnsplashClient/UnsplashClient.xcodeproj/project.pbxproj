@@ -13,6 +13,10 @@
 		F3437BB42369B5A7000BAADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3437BB32369B5A7000BAADB /* Assets.xcassets */; };
 		F3437BB72369B5A7000BAADB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3437BB62369B5A7000BAADB /* Preview Assets.xcassets */; };
 		F3437BBA2369B5A7000BAADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3437BB82369B5A7000BAADB /* LaunchScreen.storyboard */; };
+		F3437BC22369B6B8000BAADB /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3437BC12369B6B8000BAADB /* Unsplash.swift */; };
+		F3437BC42369B74F000BAADB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3437BC32369B74F000BAADB /* Models.swift */; };
+		F3437BC62369E9ED000BAADB /* UnsplashStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3437BC52369E9ED000BAADB /* UnsplashStore.swift */; };
+		F3437BC8236A1AC6000BAADB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3437BC7236A1AC6000BAADB /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		F3437BB62369B5A7000BAADB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3437BB92369B5A7000BAADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3437BBB2369B5A7000BAADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3437BC12369B6B8000BAADB /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
+		F3437BC32369B74F000BAADB /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F3437BC52369E9ED000BAADB /* UnsplashStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashStore.swift; sourceTree = "<group>"; };
+		F3437BC7236A1AC6000BAADB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				F3437BAD2369B5A6000BAADB /* AppDelegate.swift */,
 				F3437BAF2369B5A6000BAADB /* SceneDelegate.swift */,
 				F3437BB12369B5A6000BAADB /* ContentView.swift */,
+				F3437BC7236A1AC6000BAADB /* LoadingView.swift */,
+				F3437BC32369B74F000BAADB /* Models.swift */,
+				F3437BC12369B6B8000BAADB /* Unsplash.swift */,
+				F3437BC52369E9ED000BAADB /* UnsplashStore.swift */,
 				F3437BB32369B5A7000BAADB /* Assets.xcassets */,
 				F3437BB82369B5A7000BAADB /* LaunchScreen.storyboard */,
 				F3437BBB2369B5A7000BAADB /* Info.plist */,
@@ -149,6 +161,10 @@
 				F3437BAE2369B5A6000BAADB /* AppDelegate.swift in Sources */,
 				F3437BB02369B5A6000BAADB /* SceneDelegate.swift in Sources */,
 				F3437BB22369B5A6000BAADB /* ContentView.swift in Sources */,
+				F3437BC22369B6B8000BAADB /* Unsplash.swift in Sources */,
+				F3437BC42369B74F000BAADB /* Models.swift in Sources */,
+				F3437BC8236A1AC6000BAADB /* LoadingView.swift in Sources */,
+				F3437BC62369E9ED000BAADB /* UnsplashStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
