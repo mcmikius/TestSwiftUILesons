@@ -12,12 +12,9 @@ import Combine
 
 class UnsplashStore: ObservableObject {
     static let url = URL(string: "https://api.unsplash.com/photos?client_id=d30dd0af646aedfa6e85f6ace11282e8b2086a582d456a3608459e411865fe32")!
-    var models: [Model] = [] {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    var objectWillChange = PassthroughSubject<Void, Never>()
+    @Published var models: [Model] = []
+    
+//    var objectWillChange = PassthroughSubject<Void, Never>()
     func fetch() {
         URLSession.shared.dataTask(with: UnsplashStore.url) { (data, response, error) in
             guard let data = data, error == nil else {

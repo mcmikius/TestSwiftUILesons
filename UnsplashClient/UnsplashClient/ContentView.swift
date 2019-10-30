@@ -12,12 +12,10 @@ struct ContentView: View {
     @ObservedObject var store: UnsplashStore
     var body: some View {
         Group {
-            if store.models.isEmpty {
-                LoadingView()
-            } else {
+            
                 NavigationView {
                     List(store.models, rowContent: RowView.init).navigationBarTitle(Text("Photographers"))
-                }
+                
             }
         }.onAppear(perform: store.fetch)
     }
