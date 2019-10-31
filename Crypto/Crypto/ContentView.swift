@@ -55,6 +55,13 @@ struct ContentView: View {
         Coin(id: "ETH", name: "Ethereum", price: "200.45", icon: "ethereum")
     ]
     
+    var myWallet: [Coin] = [
+        Coin(id: "BTC", name: "Bitcoin", price: "1000.0", icon: "bitcoin"),
+        Coin(id: "LTC", name: "Litecoin", price: "2000.0", icon: "litecoin"),
+        Coin(id: "TRX", name: "Tron", price: "133.7", icon: "tron")
+    ]
+    
+    
     @State var is360 = false
     
     var body: some View {
@@ -71,8 +78,8 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                 List {
-                    Section(header: Text("Current prices")) {
-                        ForEach(rates, id: \.id) { coin in
+                    Section(header: Text("My Wallet")) {
+                        ForEach(myWallet, id: \.id) { coin in
                             HStack {
                                 Image(coin.icon).resizable().frame(width: 40, height: 40)
                                 Text("\(coin.name) (\(coin.id))")
@@ -81,6 +88,20 @@ struct ContentView: View {
                                     .fontWeight(.bold)
                             }
                             
+                        }
+                    }
+                    Section(header: Text("Current prices")) {
+                        ForEach(rates, id: \.id) { coin in
+                            
+                            NavigationLink(destination: Text("Hello")) {
+                                HStack {
+                                    Image(coin.icon).resizable().frame(width: 40, height: 40)
+                                    Text("\(coin.name) (\(coin.id))")
+                                    Spacer()
+                                    Text("$\(coin.price)")
+                                        .fontWeight(.bold)
+                                }
+                            }
                         }
                     }
                     
