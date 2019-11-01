@@ -41,22 +41,31 @@ class HttpAuth: ObservableObject {
     }
 }
 
+struct RootView: View {
+    @State private var manager = HttpAuth()
+    var body: some View {
+        VStack {
+            if manager.authenticated {
+                ContentView()
+            } else {
+                LoginView(manager: $manager)
+            }
+        }
+    }
+}
+
 struct LoginView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
     
-    @State private var manager = HttpAuth()
+    @Binding var manager: HttpAuth
     
     var body: some View {
         NavigationView {
             Form {
                 TextField("Your username", text: $username)
                 SecureField("Your Passwird", text: $password)
-                
-                if manager.authenticated {
-                    Text("You are logged in!")
-                }
                 
                 HStack {
                     Spacer()
@@ -74,8 +83,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView(manager: <#Binding<HttpAuth>#>)
+//    }
+//}
