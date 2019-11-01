@@ -37,3 +37,4 @@ struct LineChartController: UIViewRepresentable {
         return lineChart
     }
 }
+

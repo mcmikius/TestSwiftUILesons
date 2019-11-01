@@ -10,6 +10,15 @@ import SwiftUI
 
 struct Coin {
     let id, name, price, icon: String
+    let lineCoordinates: [CGFloat]
+}
+
+struct GraphCoin: View {
+    let title: String
+    let lineCoordinates: [CGFloat]
+    var body: some View {
+        LineChartController(lineCoordinates: lineCoordinates, inline: false).padding(.leading, 30).navigationBarTitle(Text(title))
+    }
 }
 
 struct BadgeSymbol: View {
@@ -48,17 +57,17 @@ struct BadgeSymbol: View {
 struct ContentView: View {
     
     var rates: [Coin] = [
-        Coin(id: "BTC", name: "Bitcoin", price: "9733.95", icon: "bitcoin"),
-        Coin(id: "LTC", name: "Litecoin", price: "78.70", icon: "litecoin"),
-        Coin(id: "XIP", name: "Ripple", price: "0.30", icon: "ripple"),
-        Coin(id: "TRX", name: "Tron", price: "0.02", icon: "tron"),
-        Coin(id: "ETH", name: "Ethereum", price: "200.45", icon: "ethereum")
+        Coin(id: "BTC", name: "Bitcoin", price: "9733.95", icon: "bitcoin", lineCoordinates: [5000, 10000, 7000, 9000, 12000, 10000]),
+        Coin(id: "LTC", name: "Litecoin", price: "78.70", icon: "litecoin", lineCoordinates: [90.10, 90.00, 90.30, 90.10, 90.10, 90.20]),
+        Coin(id: "XIP", name: "Ripple", price: "0.30", icon: "ripple", lineCoordinates: [0.2, 0.4, 0.3, 0.21, 0.25, 0.3]),
+        Coin(id: "TRX", name: "Tron", price: "0.02", icon: "tron", lineCoordinates: [0.3, 0.45, 0.3, 0.6, 0.7, 0.1]),
+        Coin(id: "ETH", name: "Ethereum", price: "200.45", icon: "ethereum", lineCoordinates: [200, 300.5, 250, 300, 290.9, 310])
     ]
     
     var myWallet: [Coin] = [
-        Coin(id: "BTC", name: "Bitcoin", price: "1000.0", icon: "bitcoin"),
-        Coin(id: "LTC", name: "Litecoin", price: "2000.0", icon: "litecoin"),
-        Coin(id: "TRX", name: "Tron", price: "133.7", icon: "tron")
+        Coin(id: "BTC", name: "Bitcoin", price: "1000.0", icon: "bitcoin", lineCoordinates: [5000, 10000, 7000, 9000, 12000, 10000]),
+        Coin(id: "LTC", name: "Litecoin", price: "2000.0", icon: "litecoin", lineCoordinates: [90.10, 90.00, 90.30, 90.10, 90.10, 90.20]),
+        Coin(id: "TRX", name: "Tron", price: "133.7", icon: "tron", lineCoordinates: [0.3, 0.45, 0.3, 0.6, 0.7, 0.1])
     ]
     
     
@@ -72,10 +81,12 @@ struct ContentView: View {
                 }) {
                     BadgeSymbol().frame(width: 150, height: 150).rotation3DEffect(.degrees(is360 ? 360 : 0), axis: (x: 0, y: 1, z: 1)).animation(.easeIn(duration: 0.7))
                 }
+                
                 Text("Your crypto balance")
                 Text("$3,133.7")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
+                
                 LineChartController(lineCoordinates: [3,2,5], inline: true)
                     .frame(
                         minWidth: 0,
@@ -100,7 +111,7 @@ struct ContentView: View {
                     Section(header: Text("Current prices")) {
                         ForEach(rates, id: \.id) { coin in
                             
-                            NavigationLink(destination: Text("Hello")) {
+                            NavigationLink(destination: GraphCoin(title: coin.name, lineCoordinates: coin.lineCoordinates)) {
                                 HStack {
                                     Image(coin.icon).resizable().frame(width: 40, height: 40)
                                     Text("\(coin.name) (\(coin.id))")
