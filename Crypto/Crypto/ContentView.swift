@@ -72,11 +72,18 @@ struct ContentView: View {
                 }) {
                     BadgeSymbol().frame(width: 150, height: 150).rotation3DEffect(.degrees(is360 ? 360 : 0), axis: (x: 0, y: 1, z: 1)).animation(.easeIn(duration: 0.7))
                 }
-                
                 Text("Your crypto balance")
                 Text("$3,133.7")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
+                LineChartController(lineCoordinates: [3,2,5], inline: true)
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: 150
+                ).padding()
+                
                 List {
                     Section(header: Text("My Wallet")) {
                         ForEach(myWallet, id: \.id) { coin in
