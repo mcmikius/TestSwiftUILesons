@@ -21,7 +21,7 @@ class HttpAuth: ObservableObject {
         }
     }
     func checkDetails(username: String, password: String) {
-        guard let url = URL(string: "http://localhost/...") else { return }
+        guard let url = URL(string: "https://ef68c556.ngrok.io/login") else { return }
         let body = ["username": username, "password": password]
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         var request = URLRequest(url: url)
