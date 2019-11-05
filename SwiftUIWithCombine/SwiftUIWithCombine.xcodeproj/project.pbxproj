@@ -14,6 +14,8 @@
 		F322BEFA23717420003B8824 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F322BEF923717420003B8824 /* Preview Assets.xcassets */; };
 		F322BEFD23717420003B8824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F322BEFB23717420003B8824 /* LaunchScreen.storyboard */; };
 		F322BF062371747D003B8824 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F322BF052371747D003B8824 /* KingfisherSwiftUI */; };
+		F322BF08237174C3003B8824 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F322BF07237174C3003B8824 /* User.swift */; };
+		F322BF0A23717520003B8824 /* ContentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F322BF0923717520003B8824 /* ContentItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		F322BEF923717420003B8824 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F322BEFC23717420003B8824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F322BEFE23717420003B8824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F322BF07237174C3003B8824 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F322BF0923717520003B8824 /* ContentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +65,12 @@
 				F322BEF02371741F003B8824 /* AppDelegate.swift */,
 				F322BEF22371741F003B8824 /* SceneDelegate.swift */,
 				F322BEF42371741F003B8824 /* ContentView.swift */,
+				F322BF0923717520003B8824 /* ContentItemView.swift */,
 				F322BEF623717420003B8824 /* Assets.xcassets */,
 				F322BEFB23717420003B8824 /* LaunchScreen.storyboard */,
 				F322BEFE23717420003B8824 /* Info.plist */,
 				F322BEF823717420003B8824 /* Preview Content */,
+				F322BF07237174C3003B8824 /* User.swift */,
 			);
 			path = SwiftUIWithCombine;
 			sourceTree = "<group>";
@@ -154,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F322BF08237174C3003B8824 /* User.swift in Sources */,
 				F322BEF12371741F003B8824 /* AppDelegate.swift in Sources */,
+				F322BF0A23717520003B8824 /* ContentItemView.swift in Sources */,
 				F322BEF32371741F003B8824 /* SceneDelegate.swift in Sources */,
 				F322BEF52371741F003B8824 /* ContentView.swift in Sources */,
 			);
