@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+           VStack(alignment: .leading) {
+               Text("Building the UI")
+               List {
+                   CategoryRow()
+               }
+        }
     }
 }
 
