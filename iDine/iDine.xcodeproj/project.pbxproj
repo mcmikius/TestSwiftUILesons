@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F3643000237C20B300D2F471 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3642FFF237C20B200D2F471 /* ItemDetailView.swift */; };
 		F3643002237C26C300D2F471 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3643001237C26C300D2F471 /* OrderView.swift */; };
+		F3643004237C280500D2F471 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3643003237C280500D2F471 /* AppView.swift */; };
 		F3A5805F237C023700F058E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5805E237C023700F058E6 /* AppDelegate.swift */; };
 		F3A58061237C023700F058E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A58060237C023700F058E6 /* SceneDelegate.swift */; };
 		F3A58063237C023700F058E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A58062237C023700F058E6 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		F3642FFF237C20B200D2F471 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		F3643001237C26C300D2F471 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		F3643003237C280500D2F471 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		F3A5805B237C023700F058E6 /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A5805E237C023700F058E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3A58060237C023700F058E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				F3A5805E237C023700F058E6 /* AppDelegate.swift */,
 				F3A58060237C023700F058E6 /* SceneDelegate.swift */,
+				F3643003237C280500D2F471 /* AppView.swift */,
 				F3A58062237C023700F058E6 /* ContentView.swift */,
 				F3A5807A237C064800F058E6 /* ItemRowView.swift */,
 				F3642FFF237C20B200D2F471 /* ItemDetailView.swift */,
@@ -176,6 +179,7 @@
 				F3A58078237C030700F058E6 /* Order.swift in Sources */,
 				F3643002237C26C300D2F471 /* OrderView.swift in Sources */,
 				F3A58063237C023700F058E6 /* ContentView.swift in Sources */,
+				F3643004237C280500D2F471 /* AppView.swift in Sources */,
 				F3A58077237C030700F058E6 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
