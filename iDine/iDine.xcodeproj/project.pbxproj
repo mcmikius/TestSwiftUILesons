@@ -17,6 +17,7 @@
 		F3A58077237C030700F058E6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A58073237C030700F058E6 /* Helper.swift */; };
 		F3A58078237C030700F058E6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A58074237C030700F058E6 /* Order.swift */; };
 		F3A58079237C030700F058E6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A58075237C030700F058E6 /* Menu.swift */; };
+		F3A5807B237C064800F058E6 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A5807A237C064800F058E6 /* ItemRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F3A58073237C030700F058E6 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F3A58074237C030700F058E6 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F3A58075237C030700F058E6 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F3A5807A237C064800F058E6 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				F3A5805E237C023700F058E6 /* AppDelegate.swift */,
 				F3A58060237C023700F058E6 /* SceneDelegate.swift */,
 				F3A58062237C023700F058E6 /* ContentView.swift */,
+				F3A5807A237C064800F058E6 /* ItemRowView.swift */,
 				F3A58073237C030700F058E6 /* Helper.swift */,
 				F3A58075237C030700F058E6 /* Menu.swift */,
 				F3A58074237C030700F058E6 /* Order.swift */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A5807B237C064800F058E6 /* ItemRowView.swift in Sources */,
 				F3A58079237C030700F058E6 /* Menu.swift in Sources */,
 				F3A5805F237C023700F058E6 /* AppDelegate.swift in Sources */,
 				F3A58061237C023700F058E6 /* SceneDelegate.swift in Sources */,
