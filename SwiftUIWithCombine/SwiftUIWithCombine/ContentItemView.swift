@@ -7,19 +7,19 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
+//import KingfisherSwiftUI
 
 struct ContentItemView: View {
     @State var user: User
     var body: some View {
         HStack {
-            KFImage(URL(string: (self.user.imageUrl))!).resizable().clipShape(Circle()).frame(width: 70, height: 70)
+//            KFImage(URL(string: (self.user.picture.thumbnail!))!).resizable().clipShape(Circle()).frame(width: 70, height: 70)
             VStack(alignment: .leading) {
-                Text(user.name)
+                Text(user.name.title + " " + user.name.first + " " + user.name.last)
                 Spacer()
                 Text(user.email)
                 Spacer()
-                Text(user.phoneNum)
+                Text(user.phone)
                 Spacer()
             }.padding(.init(top: 2, leading: 8, bottom: 2, trailing: 8))
         }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
@@ -27,8 +27,8 @@ struct ContentItemView: View {
 }
 
 
-struct ContentItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentItemView(user: User(name: "Vasia", email: "Petya", phoneNum: "8049847483", imageUrl: "https://miro.medium.com/max/682/1*MTiY9k7aLbSBDrXa8uIJuQ.jpeg"))
-    }
-}
+//struct ContentItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentItemView(user: User(from: <#T##Decoder#>))
+//    }
+//}
