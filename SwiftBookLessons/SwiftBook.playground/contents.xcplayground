@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='SwiftBook'/>
+        <page name='closures'/>
+        <page name='functions'/>
+        <page name='Touples'/>
+        <page name='optionals'/>
+        <page name='classes'/>
+        <page name='initialization'/>
+        <page name='inheritance'/>
+        <page name='computed property'/>
+        <page name='class properties'/>
+        <page name='lazy properties'/>
+        <page name='property obsever'/>
+        <page name='access levels'/>
+        <page name='type aliases'/>
+        <page name='enums'/>
+        <page name='structures'/>
+        <page name='import'/>
+        <page name='type casting'/>
+        <page name='Any_AnyObject'/>
+        <page name='optional chaining'/>
+        <page name='error_handling_defer'/>
+        <page name='subscripts'/>
+        <page name='extensions'/>
+        <page name='protocols'/>
+        <page name='generics'/>
+        <page name='Availability'/>
+    </pages>
+</playground>
